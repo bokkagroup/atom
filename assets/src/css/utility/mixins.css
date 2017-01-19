@@ -1,0 +1,119 @@
+/*----------------------------------------------------------
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+--------------- CHILD (custom) THEME MIXINS ----------------
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+-----------------------------------------------------------*/
+
+
+/*----------------------------------------------------------
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+------------------- PARENT THEME MIXINS --------------------
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+-----------------------------------------------------------*/
+/*----------------------------------------------------------
+
+LOST GRID MIXINS
+
+-----------------------------------------------------------*/
+@define-mixin column $numerator, $denominator, $gutter: '', $cycle: '' {
+    lost-column: $(numerator)/$(denominator) $(gutter) $(cycle);
+}
+
+@define-mixin cycle $number {
+    lost-column-cycle: $(number);
+}
+
+@define-mixin row $numerator, $denominator {
+    lost-row: $(numerator)/$(denominator);
+}
+
+@define-mixin clear {
+    clear: both;
+    lost-utility: clearfix;
+
+    &::before,
+    &::after {
+        content: '';
+        clear: both;
+        display: block;
+    }
+}
+
+@define-mixin offset $numerator, $denominator, $direction {
+    lost-offset: $(numerator)/$(denominator) $(direction);
+}
+
+@define-mixin container {
+    lost-center: 100%;
+
+    @mixin tablet {
+        lost-center: 740px;
+    }
+
+    @mixin desktop {
+        lost-center: 960px;
+    }
+
+    @mixin desktop-large {
+        lost-center: 1160px;
+    }
+}
+
+/* ----------------------------------------------------------
+BREAKPOINT MIXINS
+----------------------------------------------------------- */
+
+@define-mixin desktop-large $type: min {
+    @media ($(type)-width: $desktop-large) {
+        @mixin-content;
+    }
+}
+
+@define-mixin desktop $type: min {
+    @media ($(type)-width: $(desktop)) {
+        @mixin-content;
+    }
+}
+
+@define-mixin tablet $type: min {
+    @media ($(type)-width: $(tablet)) {
+        @mixin-content;
+    }
+}
+
+html,
+body {
+    &::before {
+        display: none;
+        content: 'mobile';
+
+        @mixin tablet {
+            content: 'tablet';
+        }
+
+        @mixin desktop {
+            content: 'desktop';
+        }
+    }
+}
+
+/*----------------------------------------------------------
+
+Utility Mixins
+
+-----------------------------------------------------------*/
+@define-mixin placeholder {
+    &::-webkit-input-placeholder {
+        @mixin-content;
+    }
+    &:-moz-placeholder { /* older Firefox*/
+        @mixin-content;
+    }
+    &::-moz-placeholder { /* Firefox 19+ */
+        @mixin-content;
+    }
+    &:-ms-input-placeholder {
+        @mixin-content;
+    }
+}
+

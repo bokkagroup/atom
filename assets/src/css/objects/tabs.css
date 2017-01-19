@@ -1,0 +1,12 @@
+.tabs {
+    .tab-body {
+        position:relative;
+        @mixin desktop {
+            display: none;
+            position:absolute;
+        }
+        &:first-child{
+            display:block;
+        }
+    }
+}

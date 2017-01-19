@@ -1,0 +1,37 @@
+html, body {
+    margin:0px;
+    padding:0px;
+    height:100%;
+    width:100%;
+    font-family:"Merriweather";
+    line-height: normal;
+    color:$gray;
+    height: 100%;
+    min-height: 100%;
+}
+
+body {
+    overflow:visible;
+    overflow-y: scroll; /* has to be scroll, not auto */
+    -webkit-overflow-scrolling: touch;
+
+}
+
+#site-wrapper {
+    display:block;
+    width:100%;
+    @mixin clear;
+    overflow: visible;
+    position:relative;
+}
+
+.section.container {
+    position:relative;
+}
+
+
+.icon {
+    display:inline-block;
+}
+
+
