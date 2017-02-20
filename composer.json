@@ -1,0 +1,12 @@
+{
+    "name": "bokka/bokka-wp-theme",
+    "description": "Theme built for the Bokka MVC wordpress framework",
+    "license": "GNU2",
+    "authors": [
+        {
+            "name": "codewizard",
+            "email": "mikemcguire.dev@gmail.com"
+        }
+    ],
+    "require": {}
+}
