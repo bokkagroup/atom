@@ -35,26 +35,47 @@ To get the most out of this theme, you’ll want to familiarize yourself with th
 ### File Structure
 
 `admin/` - separate admin code from front-end code
+
 `assets/` - js/css/sass/image/fonts should go here for compilation into the build folder_
+
 `|--build/`
+
 `|--src/`
+
 `config/` - theme level configuration files, script includes, thumbnail sizes, etc (files are autoloaded by BokkaMVC, no need to include)
+
 `controllers/` - see BokkaMVC for details on controllers/naming conventions
+
 `controllers/`
+
 `gulp/` - gulp configurations
+
 `|--tasks/` - custom tasks to be added in a separate file here
+
 `|--utility/`
+
 `helpers/` - files autoloaded by BokkaMVC, see BokkaMVC for details
+
 `hooks/` - actions/filters go here – use individual files based on functionality (files are autoloaded by BokkaMVC, no need to include)
+
 `models/` - see BokkaMVC for details on models/naming conventions
+
 `templates/` - see BokkaMVC for details on templates. Usually all HTML goes in here via Handlebars templates
+
 `views/` - see BokkaMVC for details on views/naming conventions
+
 `config.php` - see BokkaMVC for details, configurations loaded globally
+
 `gulpfile.js`
+
 `index.php` - acts as our router, see BokkaMVC for more details
+
 `package.json`
+
 `README.md`
+
 `style.css` - used only to provide theme details to WordPress (your custom theme styles should go in `/assets`)
+
 `webpack.config.js`
 
 ## Requirements
@@ -76,6 +97,7 @@ This theme is part of an ecosystem made up of a couple of plugins designed to pr
 We use [VVV](https://github.com/Varying-Vagrant-Vagrants/VVV) for our local development environment. This reflects what we run in production the most.
 
 We've also created a BASH Script that you can use to generate site configurations for VVV as well as scaffold MVC classes. If you don't want to use VVV the scaffolding will still work provided you use a similar directory structure. You can install this BASH script with the following command:
+
 ```curl -O https://gist.githubusercontent.com/mikemcguire/2bf24827b89048339589accd35326d91/raw/631f0cd76ac17fc59d3c8d23b187523a78bbfc4d/bokka && chmod +x bokka && sudo mv bokka /usr/local/bin
 ```
 
