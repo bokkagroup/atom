@@ -1,33 +1,94 @@
-# BOKKA WP Theme
+## Overview
 
-This Wordpress theme is designed to provide all you need to build a highly customizable and extendable Wordpress theme that utilizes OOP practices.
+The Bokka WordPress theme is designed to be a tool for building extendable, modular WordPress themes in an efficient and logical manner. The theme is intended to be used with the BokkaMVC plugin, allowing us to use a MVC structure to separate our data from templates and therefore develop cleaner code for greater readability and maintainability.
 
-## Features
- * Compatibility with most if not all WP Core features
- * BokkaMVC File Structure
- * Atomic Design File Structure
- * Gulp task runner
-    * Live reload
-    * Organised tasks
-    * PHP Code Sniffer `PSR2` & Linting 
-    * Image minification / Optimization
- * Webpack Compilation
-    * Backbone
-    * Lodash
- * PostCSS compilation
-    * Variables 
-    * Nested Styles
-    * Mixins
-    * Auto prefix
-    * Lost Grid
-    * Helper Mixins
-    * Source Maps
- * Parent / Child Compatibility
- * Barebones UI features
-    * Slider
-    * Tabs
-        
- 
+The theme is built with the following core principles in mind:
+- Don’t Repeat Yourself: a principle of software development, stated as "Every piece of knowledge must have a single, unambiguous, authoritative representation within a system.”
+- Separation of concerns: code should be organized such that each piece aims to address a specific, separate concern.
+
+To get the most out of this theme, you’ll want to familiarize yourself with the main methodologies we use:
+- MVC
+- Atomic design http://bradfrost.com/blog/post/atomic-web-design/
+
+### Features
+- Compatibility with most, if not all, WP Core features
+- BokkaMVC file structure
+- Atomic design file structure
+- Gulp task runner
+  - Livereload
+  - PHP Code Sniffer (PSR2) & linting
+  - Organized tasks
+  - Image minification/optimization
+  Future: JavaScript linting
+- Webpack compilation
+  - Backbone
+- PostCSS compilation
+  - Variables
+  - Nested styles
+  - Mixins
+  - Autoprefixing
+  - Minification (cssnano)
+  - Style linting
+  - Source maps
+- Future: bare-bones UI elements (organisms)
+
+### File Structure
+
+`admin/` - separate admin code from front-end code
+`assets/` - js/css/sass/image/fonts should go here for compilation into the build folder_
+`|--build/`
+`|--src/`
+`config/` - theme level configuration files, script includes, thumbnail sizes, etc (files are autoloaded by BokkaMVC, no need to include)
+`controllers/` - see BokkaMVC for details on controllers/naming conventions
+`controllers/`
+`gulp/` - gulp configurations
+`|--tasks/` - custom tasks to be added in a separate file here
+`|--utility/`
+`helpers/` - files autoloaded by BokkaMVC, see BokkaMVC for details
+`hooks/` - actions/filters go here – use individual files based on functionality (files are autoloaded by BokkaMVC, no need to include)
+`models/` - see BokkaMVC for details on models/naming conventions
+`templates/` - see BokkaMVC for details on templates. Usually all HTML goes in here via Handlebars templates
+`views/` - see BokkaMVC for details on views/naming conventions
+`config.php` - see BokkaMVC for details, configurations loaded globally
+`gulpfile.js`
+`index.php` - acts as our router, see BokkaMVC for more details
+`package.json`
+`README.md`
+`style.css` - used only to provide theme details to WordPress (your custom theme styles should go in `/assets`)
+`webpack.config.js`
+
+## Requirements
+
+This theme is part of an ecosystem made up of a couple of plugins designed to provide an MVC type of experience while developing your Wordpress themes. That being said this theme should be compatible with most Wordpress plugins.
+
+* **PHP** - Minimum 5.3.0 and above, Recommended 7. We encourage the use of namespacing and autoloaders which are not availavle in earlier versions of php. We also encourage the use of PSR linting.
+
+* [**Nodejs/NPM**](https://nodejs.org/en/) -  Node  6.2.0 and greater. NPM 2.15.9 and greater. We rely upon npm to provide all of our packages for linting, JS/CSS concatenation and interpretation. NPM will install everything you need like gulp and webpack to get running
+
+* [**Wordpress**](https://wordpress.org/) - Recommended 4.7 and above. This framework goes against most Wordpress conventions and encourages conventions used by the greater PHP community. That being said, it was built with wordpress compatibility in mind and should work fine with Wordpress 3.0. As well it should work just fine with all/most Wordpress conventions. Although it wasn't designed for migrating old themes to the MVC theme. Your likely to be using this for the creation of new projects, in which we recommend you use the latest version of Wordpress.
+
+* [Bokka WP MVC](https://github.com/bokkagroup/bokka-wp-mvc) - Plugin provides base classes and autoloaders necessary for this theme to work. Best installed as a must use plugin.
+
+* [Bokka Uitilies](https://github.com/bokkagroup/bokka-wp-utilities) - This plugin provides some utilities that will make your development a lot easier. While not a hard requirement it may become so in the future and is recommended. Best installed as a must use plugin.
+
+### Recommended environment
+
+We use [VVV](https://github.com/Varying-Vagrant-Vagrants/VVV) for our local development environment. This reflects what we run in production the most.
+
+We've also created a BASH Script that you can use to generate site configurations for VVV as well as scaffold MVC classes. If you don't want to use VVV the scaffolding will still work provided you use a similar directory structure. You can install this BASH script with the following command:
+```curl -O https://gist.githubusercontent.com/mikemcguire/2bf24827b89048339589accd35326d91/raw/631f0cd76ac17fc59d3c8d23b187523a78bbfc4d/bokka && chmod +x bokka && sudo mv bokka /usr/local/bin
+```
+
+### Recommended Plugins
+
+While the MVC environment should be compatible with most plugins, we haven't tested all plugins. And even at that using certain plugins might be different than how you might be accustomed to using them. Below is a list of 3rd party plugins that we've used with the MVC structure sucessfully (not sponsored).
+
+* [**Gravity Forms**](http://www.gravityforms.com/) - It is best to [embed](https://www.gravityhelp.com/documentation/article/embedding-a-form/) your Gravity Form by assigning the HTML as a member of a model. Using the `gravity_form` function call and providing a false value for the `$echo` parameter the function will just return your HTML.
+
+* [**ACF Pro**](https://www.advancedcustomfields.com/pro/) - ACF is what we use to extend our data capabilities in Wordpress. Our MVC plugin provides functionality that automatically attaches ACF fields to your model so you now longer have to call things like `get_field`. You may however have to do additional data manipulation for things like repeaters inside of your model to make it usable for your view.
+
+---
+
 ### Features to be added
  * SASS Compilation task
  * More documentation (possibly screencasts)
@@ -46,31 +107,6 @@ This Wordpress theme is designed to provide all you need to build a highly custo
  
  It's worth reading all of the documentation below to understand the Bokka WP Theme ecosystem. Things that most WP developers are used to like adding code to `functions.php` is generally a no-no and should be avoided at all costs.
  
-### Requirements
- While it's not required, it is recommended you use this theme with the BokkaMVC plugin. The following documentation will assume you are using BokkaMVC.
- 
-### Folder Structure
-Use this to give you an overview on how your app might be structured
- .
- +-- admin - `seperate admin code from front-end code`
- +-- assets - `js/css/sass/image/fonts should go here for compilation`
- |   +-- src
- +-- config - `theme level configuration files, script includes, thumbnail sizes, etc (files are autoloaded no need to include)`
- +-- controllers - `See bokkaMVC for details on controllers/naming conventions`
- +-- Gulp - `gulp configurations`
- |   +-- tasks - `custom tasks to be added in a seperate file here`
- +-- helpers `Files autoloaded by BokkaMVC, see BokkaMVC for details`
- +-- hooks `Actions/Filters go here, use individual files based on functionality(files are autoloaded no need to include)`
- +-- models `See bokkaMVC for details on models/naming conventions`
- +-- templates `See bokkaMVC for details on templates, usually all HTML goes in here via handelbars templates`
- +-- views `See bokkaMVC for details on views/naming conventions`
- +-- config.php `See BokkaMVC for details, configurations loaded globally`
- +-- gulpfile.js
- +-- index.php `Acts as our Router, see BokkaMVC for more details`
- +-- package.json
- +-- README.md
- +-- style.css
- +-- webpack.config.js
 
 ### Routing
 
