@@ -98,7 +98,8 @@ We use [VVV](https://github.com/Varying-Vagrant-Vagrants/VVV) for our local deve
 
 We've also created a BASH Script that you can use to generate site configurations for VVV as well as scaffold MVC classes. If you don't want to use VVV the scaffolding will still work provided you use a similar directory structure. You can install this BASH script with the following command:
 
-```curl -O https://gist.githubusercontent.com/mikemcguire/2bf24827b89048339589accd35326d91/raw/631f0cd76ac17fc59d3c8d23b187523a78bbfc4d/bokka && chmod +x bokka && sudo mv bokka /usr/local/bin
+```
+curl -O https://gist.githubusercontent.com/mikemcguire/2bf24827b89048339589accd35326d91/raw/631f0cd76ac17fc59d3c8d23b187523a78bbfc4d/bokka && chmod +x bokka && sudo mv bokka /usr/local/bin
 ```
 
 ### Recommended Plugins
