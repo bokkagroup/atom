@@ -80,23 +80,23 @@ To get the most out of this theme, you’ll want to familiarize yourself with th
 
 ## Requirements
 
-This theme is part of an ecosystem made up of a couple of plugins designed to provide an MVC type of experience while developing your Wordpress themes. That being said this theme should be compatible with most Wordpress plugins.
+This theme is part of an ecosystem made up of a couple of plugins designed to provide an MVC type of experience while developing your WordPress themes. That being said, this theme should be compatible with most WordPress plugins.
 
-* **PHP** - Minimum 5.3.0 and above, Recommended 7. We encourage the use of namespacing and autoloaders which are not availavle in earlier versions of php. We also encourage the use of PSR linting.
+* **PHP** - Minimum 5.3.0 and above, recommended 7. We encourage the use of namespacing and autoloaders, which are not available in earlier versions of PHP. We also encourage the use of PSR linting.
 
-* [**Nodejs/NPM**](https://nodejs.org/en/) -  Node  6.2.0 and greater. NPM 2.15.9 and greater. We rely upon npm to provide all of our packages for linting, JS/CSS concatenation and interpretation. NPM will install everything you need like gulp and webpack to get running
+* [**Node.js**](https://nodejs.org/en/)/[**npm**](https://www.npmjs.com/) -  Node 6.2.0 and greater, npm 2.15.9 and greater. We rely on npm to provide all of our packages for linting, JS/CSS concatenation and interpretation. npm will install everything you need to get running, like gulp and webpack.
 
-* [**Wordpress**](https://wordpress.org/) - Recommended 4.7 and above. This framework goes against most Wordpress conventions and encourages conventions used by the greater PHP community. That being said, it was built with wordpress compatibility in mind and should work fine with Wordpress 3.0. As well it should work just fine with all/most Wordpress conventions. Although it wasn't designed for migrating old themes to the MVC theme. Your likely to be using this for the creation of new projects, in which we recommend you use the latest version of Wordpress.
+* [**WordPress**](https://wordpress.org/) - Recommended 4.7 and above. Our framework goes against most WordPress conventions and instead encourages conventions used by the greater PHP community. However, it was built with WordPress compatibility in mind and should work fine with WordPress 3.0. It should also work just fine with all/most WordPress conventions, although it wasn't designed for migrating old themes to the MVC theme. You're likely to be using this for the creation of new projects, for which we recommend using the latest version of WordPress.
 
-* [Bokka WP MVC](https://github.com/bokkagroup/bokka-wp-mvc) - Plugin provides base classes and autoloaders necessary for this theme to work. Best installed as a must use plugin.
+* [**Bokka WP MVC**](https://github.com/bokkagroup/bokka-wp-mvc) - This plugin provides base classes and autoloaders necessary for this theme to work. Best installed as a [must-use plugin](https://codex.wordpress.org/Must_Use_Plugins).
 
-* [Bokka Uitilies](https://github.com/bokkagroup/bokka-wp-utilities) - This plugin provides some utilities that will make your development a lot easier. While not a hard requirement it may become so in the future and is recommended. Best installed as a must use plugin.
+* [**Bokka Utilities**](https://github.com/bokkagroup/bokka-wp-utilities) - This plugin provides some utilities that will make your development a lot easier. While not a hard requirement, it may become one in the future and is recommended. Best installed as a must-use plugin.
 
 ### Recommended environment
 
-We use [VVV](https://github.com/Varying-Vagrant-Vagrants/VVV) for our local development environment. This reflects what we run in production the most.
+We use [VVV](https://github.com/Varying-Vagrant-Vagrants/VVV) for our local development environment. This reflects what we run most frequently in production.
 
-We've also created a BASH Script that you can use to generate site configurations for VVV as well as scaffold MVC classes. If you don't want to use VVV the scaffolding will still work provided you use a similar directory structure. You can install this BASH script with the following command:
+We've also created a BASH script that you can use to generate site configurations for VVV and to scaffold MVC classes. If you don't want to use VVV, the scaffolding will still work, provided you use a similar directory structure. You can install this BASH script with the following command:
 
 ```
 curl -O https://gist.githubusercontent.com/mikemcguire/2bf24827b89048339589accd35326d91/raw/631f0cd76ac17fc59d3c8d23b187523a78bbfc4d/bokka && chmod +x bokka && sudo mv bokka /usr/local/bin
@@ -104,11 +104,11 @@ curl -O https://gist.githubusercontent.com/mikemcguire/2bf24827b89048339589accd3
 
 ### Recommended Plugins
 
-While the MVC environment should be compatible with most plugins, we haven't tested all plugins. And even at that using certain plugins might be different than how you might be accustomed to using them. Below is a list of 3rd party plugins that we've used with the MVC structure sucessfully (not sponsored).
+While the MVC environment should be compatible with most plugins, we haven't tested all plugins. Even assuming compatibility, using certain plugins might be different than how you're accustomed to using them. Below is a list of third-party plugins that we've used with the MVC structure successfully (not sponsored).
 
 * [**Gravity Forms**](http://www.gravityforms.com/) - It is best to [embed](https://www.gravityhelp.com/documentation/article/embedding-a-form/) your Gravity Form by assigning the HTML as a member of a model. Using the `gravity_form` function call and providing a false value for the `$echo` parameter the function will just return your HTML.
 
-* [**ACF Pro**](https://www.advancedcustomfields.com/pro/) - ACF is what we use to extend our data capabilities in Wordpress. Our MVC plugin provides functionality that automatically attaches ACF fields to your model so you now longer have to call things like `get_field`. You may however have to do additional data manipulation for things like repeaters inside of your model to make it usable for your view.
+* [**ACF Pro**](https://www.advancedcustomfields.com/pro/) - ACF is what we use to extend our data capabilities in WordPress. Our MVC plugi, n provides functionality that automatically attaches ACF fields to your model so you no longer have to call things like `get_field`. However, you may need to do additional data manipulation for fields like repeaters inside your model to make the data usable for your view.
 
 ---
 
@@ -119,11 +119,11 @@ While the MVC environment should be compatible with most plugins, we haven't tes
  
 ## Installation
  
- Download this theme and add it to your themes directory and activate in the Wordpress Admin
+ Download this theme and add it to your themes directory and activate in the WordPress Admin
  
 ### Child Theming
  
- Special considerations should be made when porting this into a child theme. We have a boilerplate that comes with Wordpress core, along with our typical plugins and this theme in an optimized parent/child format.
+ Special considerations should be made when porting this into a child theme. We have a boilerplate that comes with WordPress core, along with our typical plugins and this theme in an optimized parent/child format.
  It is recommended to use that boilerplate if you wish to use this as a child theme.
  
 ## Usage
@@ -135,7 +135,7 @@ While the MVC environment should be compatible with most plugins, we haven't tes
 
 __index.php__ - If you're familiar with other MVC environments you're likely familiar with a router. The idea is fairly simple, have a single point of entry that loads each part of the application as it's needed. More ofthen than not, these routes correlate directly to a page or data type. 
 
-Wordpress has a built in router. If you've built custom themes before you know that you can use specific naming conventions for your files that Wordpress will automatically use in specific situations. For example `single-carrots.php` will be used to display the details of a single post of the post type `carrots`.
+WordPress has a built in router. If you've built custom themes before you know that you can use specific naming conventions for your files that WordPress will automatically use in specific situations. For example `single-carrots.php` will be used to display the details of a single post of the post type `carrots`.
 
 We don't have to use these multiple files which often clutters our our codebase. We can use core helper functions to help us set up our routes. You are likely familiar with some of these:
 
@@ -153,7 +153,7 @@ if (is_front_page()) {
 ```
 
 __Why take this approach?__
-First and foremost `index.php` is the point of entry for all themes. If all of our code is executed from a single point of entry there shouldn't be confusion as to what is running and why. Using a template filename like `single-carrots.php` allows Wordpress to create a little "magic" for us that obfuscates why and when our code is being executed.
+First and foremost `index.php` is the point of entry for all themes. If all of our code is executed from a single point of entry there shouldn't be confusion as to what is running and why. Using a template filename like `single-carrots.php` allows WordPress to create a little "magic" for us that obfuscates why and when our code is being executed.
 
 Essentially this methodology creates a trail of breadcrumbs that will make it easier for us to debug our code in the future. While there is nothing inherently wrong with the filename methodology, it can make things confusing when a new developer dives into your codebase and has a hard time finding where your templates are loading from. All that said, this should make our themes more maintainable and extendable moving forward. `note: this theme & BokkaMVC  don't prevent you from using the filename methodology, you can use these two methodologies along side one another.`
 
@@ -188,7 +188,7 @@ __A little on our templating file structure__
  
 ### Hooks (actions/filters)
 
- This theme is fully compatible with Wordpress' built in actions & filters. When you typically inherit a Wordpress project, you will likely look into functions.php and see abundant actions, filters, and includes that dictate how your application is run. This code is generally poorly organized, monolithic, and difficult to maintain. 
+ This theme is fully compatible with WordPress' built in actions & filters. When you typically inherit a WordPress project, you will likely look into functions.php and see abundant actions, filters, and includes that dictate how your application is run. This code is generally poorly organized, monolithic, and difficult to maintain. 
  We've added a hooks folder for providing more organization, but it is up to you to take it a step further. All hooks should be organized in files specific to functionality. An example might be that you have custom permalinks that hook into a filter like so `add_filter('post_type_link', 'custom_permalink_function', 10, 4);` It's probably best to put this type of code into it's own file `hooks/permalinks.php`. Once we add a file to the hooks directory it will automatically be included by our `functions.php`
  
  
