@@ -1,5 +1,6 @@
 {
     "name": "bokka/bokka-wp-theme",
+    "type": "wordpress-theme",
     "description": "Theme built for the Bokka MVC wordpress framework",
     "license": "GNU2",
     "authors": [
@@ -8,5 +9,7 @@
             "email": "mikemcguire.dev@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "composer/installers": "~1.0"
+    }
 }
