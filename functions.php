@@ -54,11 +54,6 @@ add_action('after_setup_theme',
             'caption',
         ));
 
-        // This theme uses wp_nav_menu() in one location.
-        register_nav_menus(array(
-            'primary' => esc_html__('Primary', 'bokka_wp_theme'),
-        ));
-
         //auto load scripts
         //change to get_stylesheet_directory for child theme
         foreach (glob(get_template_directory() . "/config/*.php") as $filename) {

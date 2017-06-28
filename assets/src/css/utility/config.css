@@ -7,13 +7,13 @@
 .container {
     lost-center:100%;
 
-@mixin tablet {
-    lost-center:740px;
-}
-@mixin desktop {
-    lost-center:960px;
-}
-@mixin desktop-large {
-    lost-center:1160px;
-}
+    @mixin tablet {
+        lost-center:740px;
+    }
+    @mixin desktop {
+        lost-center:960px;
+    }
+    @mixin desktop-large {
+        lost-center:1160px;
+    }
 }
