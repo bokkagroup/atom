@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    color: $gray;
+    font-family: $serif;
+    font-size: 100%;
+}
+
+img,
+figure {
+    height: auto;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
