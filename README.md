@@ -46,8 +46,6 @@ To get the most out of this theme, you’ll want to familiarize yourself with th
 
 `controllers/` - see BokkaMVC for details on controllers/naming conventions
 
-`controllers/`
-
 `gulp/` - gulp configurations
 
 `|--tasks/` - custom tasks to be added in a separate file here
@@ -108,7 +106,53 @@ While the MVC environment should be compatible with most plugins, we haven't tes
 
 * [**Gravity Forms**](http://www.gravityforms.com/) - It is best to [embed](https://www.gravityhelp.com/documentation/article/embedding-a-form/) your Gravity Form by assigning the HTML as a member of a model. Using the `gravity_form` function call and providing a false value for the `$echo` parameter the function will just return your HTML.
 
-* [**ACF Pro**](https://www.advancedcustomfields.com/pro/) - ACF is what we use to extend our data capabilities in WordPress. Our MVC plugi, n provides functionality that automatically attaches ACF fields to your model so you no longer have to call things like `get_field`. However, you may need to do additional data manipulation for fields like repeaters inside your model to make the data usable for your view.
+* [**ACF Pro**](https://www.advancedcustomfields.com/pro/) - ACF is what we use to extend our data capabilities in WordPress. Our MVC plugin provides functionality that automatically attaches ACF fields to your model so you no longer have to call things like `get_field`. However, you may need to do additional data manipulation for fields like repeaters inside your model to make the data usable for your view.
+
+### Templating
+
+Our environment is set up to allow us to build templates with [Handlebars](http://handlebarsjs.com/). If you're not already familiar with Handlebars, we recommend checking out the website to learn the basics. Below are few things to keep in mind while working with templates and Handlebars within the Bokka WP theme ecosystem.
+
+* Handlebars templates are logicless. This helps to enforce **separation of concerns**, requiring you to restrict logic to your models and use templates only to control the presentation. The result is templates that are cleaner and easier to read.
+
+* Handlebars HTML-escapes values returned by an `{{expression}}`. To avoid HTML-escaping, use the "triple-stash", `{{{`. This will likely come in handy for rich text or WYSIWYGs such as `{{{post_content}}}`.
+
+* Because our MVC plugin automatically attaches ACF fields to your model, you can access ACF field data in your templates by using expressions such as `{{field_name}}`. This will work pretty seamlessly out-of-the-box with fields that return a single value or an array.
+
+**Example:** Say we have a [repeater](https://www.advancedcustomfields.com/resources/repeater/) field called `links`, with sub-fields `title` and `url`. We want to output an unordered list of these links. Using standard WordPress templating, our code would look like this: 
+
+```
+<?php if( have_rows('links') ): ?>
+
+  <ul>
+
+  <?php while( have_rows('links') ): the_row(); 
+    $title = get_sub_field('title');
+    $url = get_sub_field('url');
+    ?>
+
+    <li>
+      <a href="<?php echo $url; ?>"><?php echo $title; ?></a>
+    </li>
+
+  <?php endwhile; ?>
+
+  </ul>
+
+<?php endif; ?>
+```
+
+Within the Bokka WP framework, we can accomplish the same thing using significantly less code:
+
+```
+<ul>
+  {{#each links}}
+    <li>
+      <a href="{{url}}">{{title}}</a>
+    </li>
+  {{/each}}
+</ul>
+```
+
 
 ---
 
