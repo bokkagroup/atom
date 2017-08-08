@@ -4,8 +4,8 @@ namespace BokkaWP\Theme\models;
 
 class Menu
 {
-    private $menu;
-    private $wp_menu;
+    public $links;
+    public $wp_menu;
 
     /**
      * Setup new instance of Menu class
@@ -13,7 +13,7 @@ class Menu
      */
     public function __construct($name) {
         $this->wp_menu = wp_get_nav_menu_object($name);
-        $this->menu = Menu::setMenuItems();
+        $this->links = Menu::setMenuItems();
     }
 
     /**
@@ -22,7 +22,7 @@ class Menu
     protected function setMenuItems()
     {
         $menu_items = wp_get_nav_menu_items($this->wp_menu->term_id, array('order' => 'DESC'));
-        $menu_object['links'] = array();
+        $menu_object = array();
 
         foreach ($menu_items as $item) {
             $menu_item = array();
@@ -35,9 +35,11 @@ class Menu
             }
 
             if (!$item->menu_item_parent) {
-                $menu_object['links'][$item->ID] = $menu_item;
+                $menu_item['parent'] = true;
+                $menu_object[$item->ID] = $menu_item;
             } else {
-                $menu_object['links'] = Menu::assignChildMenu($item, $menu_item, $menu_object['links']);
+                $menu_item['child'] = true;
+                $menu_object = Menu::assignChildMenu($item, $menu_item, $menu_object);
             }
         }
 
@@ -56,6 +58,7 @@ class Menu
 
         foreach ($menu_links as $key => $value) {
             if ($key == $item->menu_item_parent) {
+                $menu_links[$key]['parent'] = true;
                 $menu_links[$key]['child_menu'][$item->ID] = $menu_item;
             } elseif (isset($value['child_menu']) && !empty($value['child_menu'])) {
                 $menu_links[$key]['child_menu'] = Menu::assignChildMenu($item, $menu_item, $value['child_menu']);
@@ -63,5 +66,29 @@ class Menu
         }
 
         return $menu_links;
+    }
+
+    /**
+     * Apply an anonymous callback function to all links in the menu
+     */
+    public function updateMenuItems($callback, $menu_links = null, $is_child = false)
+    {
+        if (!$menu_links) {
+            $menu_links = $this->links;
+        }
+
+        foreach($menu_links as $key => $value) {
+            $menu_links[$key] = $callback($value);
+
+            if (isset($value['child_menu'])) {
+                $menu_links[$key]['child_menu'] = Menu::updateMenuItems($callback, $value['child_menu'], true);
+            }
+        }
+
+        if (!$is_child) {
+            $this->links = $menu_links;
+        } else {
+            return $menu_links;
+        }
     }
 }
