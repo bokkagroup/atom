@@ -1,6 +1,13 @@
 import $ from 'jQuery';
+import * as helpers from './helpers/helpers';
 
 $(document).ready(() => {
+
+    //example module usage
+    let result = helpers.exampleFunction(4);
+    console.log(result); // logs 16
+    let result2 = helpers.anotherExampleFunction(4);
+    console.log(result2); // logs 8
 
     //example promise
     let someVar = false;
