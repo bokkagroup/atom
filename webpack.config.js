@@ -1,52 +1,58 @@
 var webpack = require('webpack');
 
 module.exports = {
-    watch:true,
+    watch: true,
     entry: {
-        initialize: "./assets/src/js/initialize.js",
-        depend: "./assets/src/js/depend.js",
+        initialize: ["babel-polyfill", "./assets/src/js/initialize.js"],
         common: [
-            'lodash',
-            'backbone'
+            'lodash'
         ]
     },
-    externals: { jquery: "jQuery" },
+    externals: {
+        jquery: "jQuery"
+    },
     output: {
         path: __dirname + "/assets/build/js/",
         filename: "[name].min.js"
     },
     module: {
-        preLoaders: [
+        rules: [
             {
-                loaders: ['eslint'],
+                test: /\.js$/,
+                loader: 'eslint-loader',
+                exclude: /(node_modules)/,
+                options: {
+                    failOnWarning: false,
+                    failOnError: false
+                }
+            },
+            {
+                test: /\.js$/,
+                exclude: /(node_modules)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['env']
+                    }
+                }
+            },
+            {
+                test: /\.html$/,
+                loader: 'mustache-loader'
             }
         ],
-        loaders: [ {
-            test: /\.html$/,
-            loader: 'mustache'
-        } ]
     },
     resolve: {
-      // you can now require('file') instead of require('file.js')
-      extensions: ['', '.html', '.js', '.json']
-    },
-    eslint: {
-        failOnWarning: false,
-        failOnError: false
+        extensions: ['.html', '.js', '.json']
     },
     plugins: [
         new webpack.ProvidePlugin({
-            _               : 'lodash',
-            backbone        : 'backbone',
-
+            _ : 'lodash'
         }),
-        new webpack.optimize.CommonsChunkPlugin('common', 'common.js'),
         new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false
             }
         })
     ]
-
 }
-

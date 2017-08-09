@@ -3,10 +3,13 @@
   "version": "0.0.1",
   "description": "Wordpress parent theme for the Bokka Catalyst Suite if Wordpress tools",
   "main": "webpack.config.js",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^6.3.3",
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-env": "^1.6.0",
     "backbone": "^1.2.3",
     "eslint": "^3.4.0",
     "eslint-loader": "^1.5.0",
@@ -39,8 +42,8 @@
     "sprity": "^1.0.8",
     "stylelint": "^7.1.0",
     "stylelint-order": "^0.6.0",
-    "webpack": "^1.12.9",
-    "webpack-stream": "^3.2.0"
+    "webpack": "^3.5.2",
+    "webpack-stream": "^4.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
