@@ -2,9 +2,10 @@ import $ from 'jQuery';
 
 $(document).ready(() => {
 
-    var someVar = false;
+    //example promise
+    let someVar = false;
 
-    var testPromise = new Promise((resolve, reject) => {
+    let testPromise = new Promise((resolve, reject) => {
         if (someVar) {
             return resolve('it worked!');
         } else {
@@ -17,4 +18,15 @@ $(document).ready(() => {
     }, (error) => {
         console.log(error);
     });
+
+    //example handlebars template
+    let template = require('./templates/example.handlebars');
+    let exampleTemplate = document.createElement('div');
+
+    exampleTemplate.innerHTML = template({
+        headline: "This is the headline",
+        author: "Charlie"
+    });
+
+    document.body.appendChild(exampleTemplate);
 });

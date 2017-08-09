@@ -37,8 +37,8 @@ module.exports = {
                 }
             },
             {
-                test: /\.html$/,
-                loader: 'mustache-loader'
+                test: /\.handlebars$/,
+                loader: 'handlebars-loader'
             }
         ],
     },
