@@ -17,7 +17,7 @@
     "gulp-if": "^2.0.1",
     "gulp-imagemin": "^2.4.0",
     "gulp-livereload": "^3.8.1",
-    "gulp-phpcs": "^1.0.0",
+    "gulp-phpcs": "^2.0.0",
     "gulp-postcss": "^6.1.0",
     "gulp-sourcemaps": "^1.6.0",
     "gutil": "^1.6.4",
