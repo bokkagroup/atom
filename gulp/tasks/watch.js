@@ -6,23 +6,22 @@
 
  */
 
-var gulp = require('gulp')
-var livereload = require('gulp-livereload')
-
+var gulp                = require('gulp')
+var livereload          = require('gulp-livereload')
 
 gulp.task('watch-styles', ['css', 'copyfonts', 'image'], function () {
+    livereload.listen()
     gulp.watch(['assets/src/css/**/*.css'], ['css'])
     gulp.watch(['assets/src/images/**/*'], ['image'])
     gulp.watch(['assets/src/fonts/**/*.{ttf,woff,woff2,eof,svg}'], ['copyfonts'])
-    livereload.listen();
 })
 
 gulp.task('watch-js', ['build-webpack'], function () {
-    gulp.watch(['assets/src/js/*.js', 'assets/src/js/**/*.js', 'assets/src/js/**/*.html'], ['build-webpack'])
     livereload.listen()
+    gulp.watch(['assets/src/js/*.js', 'assets/src/js/**/*.js', 'assets/src/js/**/*.html'], ['build-webpack'])
 })
 
 gulp.task('watch-php', ['phpcs', 'phplint'], function () {
-    gulp.watch(['**/*.php'], ['phpcs', 'phplint'])
     livereload.listen()
+    gulp.watch(['**/*.php'], ['phpcs', 'phplint'])
 })

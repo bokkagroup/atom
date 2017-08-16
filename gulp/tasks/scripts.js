@@ -23,6 +23,7 @@ const SRC = [
 const DEST = './assets/build/js/'
 
 gulp.task('build-webpack', [], function () {
+    webpackConfig.watch = false
     return gulp.src(SRC)
         .pipe(webpack(webpackConfig))
         .pipe(gulp.dest(DEST))

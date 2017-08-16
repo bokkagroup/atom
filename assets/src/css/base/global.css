@@ -7,7 +7,6 @@ html {
 }
 
 body {
-    color: $gray;
     font-family: $serif;
     font-size: 100%;
 }
