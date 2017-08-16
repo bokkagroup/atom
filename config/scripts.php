@@ -32,7 +32,7 @@ add_action('wp_enqueue_scripts', function () {
 /* ----------------------------------------------------------------------------------
 Enqueue custom Styles & Scripts
 ---------------------------------------------------------------------------------- */
-add_action('wp_enqueue_scripts', function() {
+add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('jquery', false, array(), false, false);
 
     wp_enqueue_script('bokkawptheme-initialize');
@@ -42,14 +42,14 @@ add_action('wp_enqueue_scripts', function() {
 /* ----------------------------------------------------------------------------------
 Enqueue Parent Styles & Scripts
 ---------------------------------------------------------------------------------- */
-add_action('wp_enqueue_scripts', function() {
+add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('bokkawptheme-initialize');
 }, 50);
 
 /* ----------------------------------------------------------------------------------
 Enqueue MUST USE Styles & Scripts (loads before other scripts)
 ---------------------------------------------------------------------------------- */
-add_action('wp_enqueue_scripts', function() {
+add_action('wp_enqueue_scripts', function () {
     // prefer the child theme's common file
     // as to not load multiple copies of backbone & lodash
     if (!wp_script_is('bokkawptheme-common')) {

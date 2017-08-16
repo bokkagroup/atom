@@ -17,4 +17,3 @@ if (!defined('BOKKA_ENV') && isset($_SERVER) && $_SERVER['HTTP_HOST']) {
         define('BOKKA_ENV', "production");
     }
 }
-
