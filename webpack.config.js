@@ -1,4 +1,5 @@
 var webpack = require('webpack');
+var WebpackNotifierPlugin = require('webpack-notifier');
 
 module.exports = {
     watch: true,
@@ -46,6 +47,7 @@ module.exports = {
         extensions: ['.html', '.js', '.json']
     },
     plugins: [
+        new WebpackNotifierPlugin(),
         new webpack.ProvidePlugin({
             _ : 'lodash'
         }),
