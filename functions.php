@@ -15,8 +15,7 @@ add_action('after_setup_theme',
      * as indicating support for post thumbnails.
      */
 
-    function()
-    {
+    function () {
 
         include_once 'config.php';
         /*

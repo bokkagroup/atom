@@ -8,4 +8,3 @@
  *
  * @package bokka_wp_theme
  */
-

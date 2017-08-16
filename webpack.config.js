@@ -16,11 +16,6 @@ module.exports = {
         filename: "[name].min.js"
     },
     module: {
-        preLoaders: [
-            {
-                loaders: ['eslint'],
-            }
-        ],
         loaders: [ {
             test: /\.html$/,
             loader: 'mustache'
@@ -29,10 +24,6 @@ module.exports = {
     resolve: {
       // you can now require('file') instead of require('file.js')
       extensions: ['', '.html', '.js', '.json']
-    },
-    eslint: {
-        failOnWarning: false,
-        failOnError: false
     },
     plugins: [
         new webpack.ProvidePlugin({
