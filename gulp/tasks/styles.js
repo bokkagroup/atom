@@ -33,7 +33,7 @@ gulp.task('style-lint', function () {
 gulp.task('css', ['style-lint'], function () {
 
     var SRC = 'assets/src/css/**/*.css';
-    var DEST = './assets/build/css/';
+    var DEST = 'assets/build/css';
 
     var plugins = [
         require('postcss-import'),
@@ -46,10 +46,10 @@ gulp.task('css', ['style-lint'], function () {
     ];
 
     return gulp.src([SRC])
-        .pipe(livereload())
         .pipe(sourcemaps.init())
         .pipe(postcss(plugins))
         .pipe(changedInPlace())
+        .pipe(livereload())
         .pipe(sourcemaps.write('./maps/'))
         .pipe(gulp.dest(DEST));
 });
