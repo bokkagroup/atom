@@ -1,3 +1,11 @@
+/*
+  ___ _  _ ___ _    _     _
+ | _ \ || | _ \ |  (_)_ _| |_
+ |  _/ __ |  _/ |__| | ' \  _|
+ |_| |_||_|_| |____|_|_||_\__|
+
+ */
+
 var gulp    = require('gulp')
 var phplint = require('phplint').lint
 
@@ -13,7 +21,5 @@ gulp.task('phplint', function (cb) {
             process.exit(1)
         }
         cb()
-
-    })
-
-})
+    });
+});

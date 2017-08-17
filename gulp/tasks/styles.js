@@ -7,15 +7,15 @@
 
  */
 
-var gulp            = require('gulp')
-var del             = require('del')
-var autoprefixer    = require('autoprefixer')
-var lost            = require('lost')
-var postcss         = require('gulp-postcss')
-var sourcemaps      = require('gulp-sourcemaps')
-var nano            = require('gulp-cssnano')
-var livereload      = require('gulp-livereload')
-var changedInPlace  = require('gulp-changed-in-place')
+var gulp            = require('gulp');
+var del             = require('del');
+var autoprefixer    = require('autoprefixer');
+var lost            = require('lost');
+var postcss         = require('gulp-postcss');
+var sourcemaps      = require('gulp-sourcemaps');
+var nano            = require('gulp-cssnano');
+var livereload      = require('gulp-livereload');
+var changedInPlace  = require('gulp-changed-in-place');
 
 gulp.task('style-lint', function () {
 
@@ -46,12 +46,12 @@ gulp.task('css', ['style-lint'], function () {
     ];
 
     return gulp.src([SRC])
-        .pipe( livereload() )
-        .pipe( sourcemaps.init() )
-        .pipe( postcss(plugins) )
-        .pipe( changedInPlace() )
-        .pipe( sourcemaps.write('./maps/') )
-        .pipe( gulp.dest(DEST) )
+        .pipe(livereload())
+        .pipe(sourcemaps.init())
+        .pipe(postcss(plugins))
+        .pipe(changedInPlace())
+        .pipe(sourcemaps.write('./maps/'))
+        .pipe(gulp.dest(DEST));
 });
 
 gulp.task('css-clean', function () {
@@ -71,7 +71,7 @@ gulp.task('css-clean', function () {
 gulp.task('css-optimize', function () {
 
     return gulp.src(['assets/build/css/*.css'])
-        .pipe( nano() )
-        .pipe( gulp.dest('./assets/build/css/') )
+        .pipe(nano())
+        .pipe(gulp.dest('./assets/build/css/'));
 
 });
