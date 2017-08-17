@@ -22,8 +22,7 @@ gulp.task('style-lint', function () {
     var SRC = ['assets/src/css/**/*.css', '!assets/src/css/utility/reset.css', '!assets/src/css/vendor/*.css', '!assets/src/css/base/sprite.css'];
 
     return gulp.src(SRC)
-        .pipe( changedInPlace() )
-        .pipe( postcss([
+        .pipe(postcss([
             // See .stylelintrc for configuration options
             require('stylelint'),
             require('postcss-reporter')({ clearMessages: true })
@@ -49,8 +48,8 @@ gulp.task('css', ['style-lint'], function () {
         .pipe(sourcemaps.init())
         .pipe(postcss(plugins))
         .pipe(changedInPlace())
-        .pipe(livereload())
         .pipe(sourcemaps.write('./maps/'))
+        .pipe(livereload())
         .pipe(gulp.dest(DEST));
 });
 
