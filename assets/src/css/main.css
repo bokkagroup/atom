@@ -8,6 +8,7 @@ BASE STYLES
 @import 'base/grid';
 @import 'base/global';
 @import 'base/typography';
+@import 'base/sprite';
 
 /* ----------------------------------------------------------
 VENDOR

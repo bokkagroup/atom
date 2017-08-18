@@ -9,7 +9,7 @@ add_action('wp_enqueue_scripts', function () {
     if (!is_admin()) {
         wp_register_script(
             'bokkawptheme-common',
-            get_stylesheet_directory_uri() . '/assets/build/js/common.js',
+            get_stylesheet_directory_uri() . '/assets/build/js/common.min.js',
             array(),
             null,
             true
