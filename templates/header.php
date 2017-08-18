@@ -6,5 +6,5 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package bokka_wp_theme
+ * @package catalyst_wp_theme
  */
