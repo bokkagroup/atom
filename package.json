@@ -1,7 +1,7 @@
 {
   "name": "bokka-wp-theme",
   "version": "0.0.1",
-  "description": "Wordpress parent theme for the Bokka Catalyst Suite if Wordpress tools",
+  "description": "Wordpress parent theme for the Bokka Catalyst Suite of Wordpress tools",
   "main": "webpack.config.js",
   "dependencies": {},
   "devDependencies": {
@@ -46,7 +46,7 @@
     "postcss-simple-vars": "^1.2.0",
     "postcss-sorting": "^1.6.1",
     "run-sequence": "^1.1.5",
-    "stylelint": "^7.1.0",
+    "stylelint": "^8.1.1",
     "stylelint-order": "^0.6.0",
     "webpack": "^3.5.2",
     "webpack-notifier": "^1.5.0",
