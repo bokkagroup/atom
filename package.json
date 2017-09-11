@@ -1,5 +1,5 @@
 {
-  "name": "bokka-wp-theme",
+  "name": "catalyst-wp-theme",
   "version": "0.0.1",
   "description": "Wordpress parent theme for the Bokka Catalyst Suite of Wordpress tools",
   "main": "webpack.config.js",
@@ -53,7 +53,9 @@
     "webpack-stream": "^4.0.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp build",
+    "watch": "gulp watch"
   },
   "author": "",
   "license": "ISC"

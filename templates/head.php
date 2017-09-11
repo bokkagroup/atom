@@ -4,7 +4,7 @@
  *
  * This is the template that opens and specified our HTML document providing markup up to <div id="site-wrapper">
  *
- * @package bokka_wp_theme
+ * @package catalyst_wp_theme
  */
 ?>
 <!DOCTYPE html>
@@ -14,7 +14,7 @@
         <link rel="icon" type="image/png" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/build/images/favicon.png">
 
         <?php //local reloading
-        if (BOKKA_ENV === "local") {
+        if (CATALYST_WP_ENV === "local") {
             echo '<script src="http://localhost:35729/livereload.js?snipver=1"></script>';
         } ?>
 
