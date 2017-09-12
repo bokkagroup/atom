@@ -1,0 +1,32 @@
+<div id="{{id}}" class="organism text-image-block">
+    <section>
+        {{#if title}}
+        <div class="container">
+            <div class="title">
+                <h2>{{title}}</h2>
+            </div>
+        </div>
+        {{/if}}
+        <div class="container">
+            {{#if align_image_left}}
+                {{> molecules/blocks/slider}}
+            {{/if}}
+            <div class="body">
+                {{{description}}}
+
+                {{#if button}}
+                    {{#if link}}
+                        <a href="{{link}}" class="button">{{button_text}}</a>
+                    {{else}}
+                        <a href="#campaign_vip_form" class="button js-page-jump">
+                            {{button_text}}
+                        </a>
+                    {{/if}}
+                {{/if}}
+            </div><!--/container-->
+            {{#if align_image_right}}
+                {{> molecules/blocks/slider}}
+            {{/if}}
+        </div>
+    </section>
+</div><!--/text-image-block-->

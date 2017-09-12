@@ -1,0 +1,28 @@
+<div id="{{id}}" class="organism brand-window-slider">
+    <section>
+        <div class="container">
+            <div class="slider">
+                <ul class="slides">
+                    {{#each item}}
+                        <li class="slide">
+                            {{> molecules/image}}
+                            <div class="text">
+                                {{#if title}}
+                                    <div class="title">
+                                        <h1>{{title}}</h1>
+                                    </div>
+                                {{/if}}
+                                {{#if subtitle}}
+                                    <div class="subtitle">
+                                        <h2>{{subtitle}}</h2>
+                                    </div>
+                                {{/if}}
+                                {{> atoms/button}}
+                            </div><!--/text-->
+                        </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div><!--/container -->
+    </section>
+</div><!--/brand-window-slider-->

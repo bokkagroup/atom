@@ -1,7 +1,6 @@
 /* ----------------------------------------------------------
 BASE STYLES
 ----------------------------------------------------------- */
-
 @import 'base/normalize';
 @import 'base/variables';
 @import 'base/mixins';
@@ -25,6 +24,28 @@ MOLECULES
 /* ----------------------------------------------------------
 ORGANISMS
 ----------------------------------------------------------- */
+@import 'organisms/accordion';
+@import 'organisms/basic-content-block';
+@import 'organisms/brand-window';
+@import 'organisms/brand-window-slider';
+@import 'organisms/cards';
+@import 'organisms/carousel-4-up';
+@import 'organisms/content-columns-3';
+@import 'organisms/content-columns-4';
+@import 'organisms/content-grid-thumbnails-2';
+@import 'organisms/conversion-point-w-modal-form';
+@import 'organisms/cta-w-multimedia';
+@import 'organisms/icon-grid';
+@import 'organisms/image-grid-w-overlay-content';
+@import 'organisms/lp-intro-w-form';
+@import 'organisms/on-page-form';
+@import 'organisms/slider-gallery';
+@import 'organisms/testimonial';
+@import 'organisms/text-image-block';
+@import 'organisms/text-slider';
+@import 'organisms/text-w-background-image';
+@import 'organisms/video';
+
 
 /* ----------------------------------------------------------
 LAYOUTS

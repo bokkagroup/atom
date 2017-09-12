@@ -1,0 +1,58 @@
+<div id="{{id}}" class="organism lp-intro-w-form">
+    <section>
+        <div class="container">
+            <div class="main">
+                <div class="text">
+
+                    {{#if title}}
+                    <div class="title">
+                        <h2 class="caps">{{{title}}}</h2>
+                    </div>
+                    {{/if}}
+
+                    {{#if subtitle}}
+                    <div class="subtitle">
+                        <h3 class="caps">{{subtitle}}</h3>
+                    </div>
+                    {{/if}}
+
+                    {{#if description}}
+                    <div class="body">
+                        {{{description}}}
+                    </div>
+                    {{/if}}
+
+                </div><!--/text -->
+
+                <div class="form-column">
+                    <div class="form-wrapper">
+                        <span id="form" class="form-anchor"></span>
+                        <div class="header">
+                            {{#if form_title}}
+                            <div class="title">
+                                <h3 class="caps">{{form_title}}</h3>
+                            </div>
+                            {{/if}}
+                            {{#if form_subtitle}}
+                            <div class="subtitle">
+                                <h4>{{form_subtitle}}</h4>
+                            </div>
+                            {{/if}}
+                        </div>
+                        {{{gform}}}
+
+                        {{#if show_arrow}}
+                            <img class="arrow" src="/wp-content/themes/bokka-wp-theme-child/assets/build/images/inset-arrow.png">
+                        {{/if}}
+
+                        {{#if form_footer}}
+                            <div class="form-footer">
+                                {{form_footer}}
+                            </div>
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        </div><!--/container-->
+    </section>
+</div><!--/lp-intro-w-form-->

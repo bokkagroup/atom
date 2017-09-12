@@ -1,0 +1,11 @@
+{{#if button}}
+    {{#with button}}
+        <div class="button atom">
+            <a href="{{button_link}}"
+                title="{{#if button_title}}{{button_title}}{{/if}}"
+                class="link">
+                {{button_text}}
+            </a>
+        </div>
+    {{/with}}
+{{/if}}

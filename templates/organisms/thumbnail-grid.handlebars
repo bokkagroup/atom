@@ -1,0 +1,18 @@
+<div id="{{id}}" class="organism thumbnail-grid">
+    <div class="container">
+
+        {{#if title}}
+            <h2>{{title}}</h2>
+        {{/if}}
+        {{#if subtitle}}
+            <h3>{{subtitle}}</h3>
+        {{/if}}
+
+        {{#each item}}
+            <div class="item">
+                <img src="{{image}}">
+            </div>
+        {{/each}}
+
+    </div><!--/container-->
+</div><!--/thumbnail-grid-->

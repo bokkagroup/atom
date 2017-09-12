@@ -1,0 +1,14 @@
+{{#if image}}
+    {{#with image}}
+        <div class="image">
+            <figure>
+                <img src="{{src}}" alt="">
+                {{#if caption}}
+                    <div class="caption">
+                        <figcaption>{{caption}}</figcaption>
+                    </div>
+                {{/if}}
+            </figure>
+        </div><!--/image-->
+    {{/with}}
+{{/if}}
