@@ -2,7 +2,7 @@
 use BokkaWP\Theme\controllers\OrganismsController;
 
 //Determine which controller to use
-} elseif (is_singular('communities')) {
+if (is_singular('communities')) {
 } elseif (is_singular('plans')) {
 } elseif (is_singular('model')) {
 } elseif (is_singular('home')) {
