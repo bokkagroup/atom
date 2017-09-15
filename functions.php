@@ -6,7 +6,8 @@
  *
  * @package bokka_wp_theme
  */
-add_action('after_setup_theme',
+add_action(
+    'after_setup_theme',
     /**
      * Sets up theme defaults and registers support for various WordPress features and loads our various actions.
      *
@@ -66,5 +67,6 @@ add_action('after_setup_theme',
          * CUSTOM INCLUDES BELOW *
          ------------------------*/
     },
-1);
+    1
+);
 remove_filter('template_redirect', 'redirect_canonical');
