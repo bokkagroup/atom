@@ -1,7 +1,22 @@
-<div id="{{id}}" class="organism image-grid-w-overlay-content">
+<div class="organism image-grid-w-overlay-content" id="{{id}}">
     <section>
         <div class="container">
-
+            <div class="grid">
+                {{#each item}}
+                    {{#if item_link}}<a href="{{url}}" target="_blank">{{/if}}
+                    <div class="item" style="background-image: url('{{background_image}}');">
+                        <div class="content">
+                            {{> molecules/image}}
+                            {{#if sub_title}}
+                                <div class="subtitle">
+                                    {{sub_title}}
+                                </div>
+                            {{/if}}
+                        </div>
+                    </div>
+                    {{#if item_link}}</a>{{/if}}
+                {{/each}}
+            </div>
         </div><!--/container -->
     </section>
 </div><!--/image-grid-w-overlay-content-->

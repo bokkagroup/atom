@@ -1,8 +1,12 @@
-<div id="{{id}}" class="organism text-w-background-image" style="background-image:url('{{image}}');">
+<div class="organism text-w-background-image" id="{{id}}" style="background-image:url('{{image}}');">
     <section>
         <div class="container">
-            <div class="body">
-                {{{description}}}
+            <div class="text">
+                <div class="">
+                <div class="body">
+                    {{{description}}}
+                    {{> atoms/button}}
+                </div>
             </div>
         </div>
     </section>

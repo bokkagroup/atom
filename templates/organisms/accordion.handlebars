@@ -1,7 +1,19 @@
-<div id="{{id}}" class="organism accordion">
+<div class="organism accordion" id="{{id}}">
     <section>
         <div class="container">
-
+            {{#each item}}
+                <div class="item">
+                    <div class="title">
+                        <h3>{{title}}</h3>
+                        {{#if sub_title}}
+                            <h4>{{sub_title}}</h4>
+                        {{/if}}
+                    </div>
+                    <div class="body">
+                        {{{description}}}
+                    </div>
+                </div>
+            {{/each}}
         </div><!--/container -->
     </section>
 </div><!--/accordion-->

@@ -1,7 +1,20 @@
-<div id="{{id}}" class="organism video">
+<div class="organism video" id="{{id}}">
     <section>
         <div class="container">
-          
+            <div class="text">
+                <div class="title">
+                    <h2>{{title}}</h2>
+                </div>
+                <div class="body">
+                    {{subtitle}}
+                </div>
+            </div><!--/text -->
+
+            <div class="embed-container">
+                {{{video_embed_code}}}
+            </div>
+
+            {{> atoms/button}}
         </div><!--/container-->
     </section>
 </div><!--/video-->

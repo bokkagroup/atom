@@ -1,7 +1,30 @@
-<div id="{{id}}" class="organism icon-grid">
+<div class="organism icon-grid" id="{{id}}">
     <section>
         <div class="container">
+            <div class="text">
+                {{#if title}}
+                <div class="title">
+                    <h2 class="caps">{{{title}}}</h2>
+                </div>
+                {{/if}}
 
+                {{#if subtitle}}
+                <div class="subtitle">
+                    <h3 class="caps">{{subtitle}}</h3>
+                </div>
+                {{/if}}
+            </div>
+
+            <ul>
+                {{#each item}}
+                    <li>
+                        {{#if link}}<a href="{{link}}">{{/if}}
+                            <span class="image icon {{icon}}"></span>
+                            <div class="text">{{title}}</div>
+                        {{#if link}}</a>{{/if}}
+                    </li>
+                {{/each}}
+            </ul>
         </div><!--/container -->
     </section>
 </div><!--/icon-grid-->
