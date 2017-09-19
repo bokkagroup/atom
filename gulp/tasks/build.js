@@ -11,16 +11,14 @@ var del             = require('del');
 var runSequence     = require('run-sequence');
 
 gulp.task('build-clean', function () {
-
-    return del([
+    return del.sync([
         './assets/build/**/*',
         './assets/build'
     ]);
-
 });
 
-gulp.task('build', function () {
 
+gulp.task('build', function (callback) {
     // primary async build tasks
     var buildTasks = [
         'sprites',
@@ -33,10 +31,5 @@ gulp.task('build', function () {
     ];
 
     // tasks to run after everything else has finished
-    runSequence('build-clean', buildTasks, function () {
-        gulp.start('css-clean');
-        gulp.start('css-optimize');
-        gulp.start('sprites-clean');
-    });
-
+    runSequence('build-clean', buildTasks, ['css-optimize'], callback);
 });

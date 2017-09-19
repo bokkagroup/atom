@@ -7,6 +7,9 @@
 
  */
 
-var gulp = require('gulp');
+var gulp            = require('gulp');
+var runSequence     = require('run-sequence');
 
-gulp.task('default', ['build', 'watch-styles', 'watch-js', 'watch-php']);
+gulp.task('default', function() {
+    runSequence('build-clean', ['watch-styles', 'watch-js', 'watch-php']);
+});

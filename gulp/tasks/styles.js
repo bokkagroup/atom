@@ -15,13 +15,19 @@ var postcss         = require('gulp-postcss');
 var sourcemaps      = require('gulp-sourcemaps');
 var nano            = require('gulp-cssnano');
 var livereload      = require('gulp-livereload');
-var changedInPlace  = require('gulp-changed-in-place');
+var cache           = require('gulp-cached');
 
 gulp.task('style-lint', function () {
 
-    var SRC = ['assets/src/css/**/*.css', '!assets/src/css/utility/reset.css', '!assets/src/css/vendor/*.css', '!assets/src/css/base/sprite.css'];
+    var SRC = [
+        'assets/src/css/**/*.css',
+        '!assets/src/css/utility/reset.css',
+        '!assets/src/css/vendor/*.css',
+        '!assets/src/css/base/sprite.css'
+    ];
 
     return gulp.src(SRC)
+        .pipe(cache('style-linting'))
         .pipe(postcss([
             // See .stylelintrc for configuration options
             require('stylelint'),
@@ -31,7 +37,7 @@ gulp.task('style-lint', function () {
 
 gulp.task('css', ['style-lint'], function () {
 
-    var SRC = 'assets/src/css/**/*.css';
+    var SRC = 'assets/src/css/main.css';
     var DEST = 'assets/build/css';
 
     var plugins = [
@@ -47,24 +53,9 @@ gulp.task('css', ['style-lint'], function () {
     return gulp.src([SRC])
         .pipe(sourcemaps.init())
         .pipe(postcss(plugins))
-        .pipe(changedInPlace())
         .pipe(sourcemaps.write('./maps/'))
         .pipe(livereload())
         .pipe(gulp.dest(DEST));
-});
-
-gulp.task('css-clean', function () {
-
-    var paths = [
-        './assets/build/css/**/*',
-        '!./assets/build/css/main.css',
-        '!./assets/build/css/maps',
-        '!./assets/build/css/maps/**',
-        '!./assets/build/css/maps/**/*.map'
-    ];
-
-    return del(paths);
-
 });
 
 gulp.task('css-optimize', function () {
@@ -72,5 +63,4 @@ gulp.task('css-optimize', function () {
     return gulp.src(['assets/build/css/*.css'])
         .pipe(nano())
         .pipe(gulp.dest('./assets/build/css/'));
-
 });
