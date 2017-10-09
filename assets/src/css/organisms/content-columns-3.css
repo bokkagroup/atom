@@ -1,3 +1,18 @@
 .organism.content-columns-3 {
-    
+    padding: 3rem 0;
+
+    @mixin tablet {
+        padding: 8rem 0;
+    }
+
+    .item {
+        margin: 0 2rem 6rem;
+        position: relative;
+
+        @mixin tablet {
+            @mixin column 1, 3;
+
+            margin: 0 0 6rem;
+        }
+    }
 }

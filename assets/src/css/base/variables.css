@@ -3,6 +3,7 @@ COLORS
 ----------------------------------------------------------- */
 $white: #fff;
 $black: #000;
+$gray: #777;
 
 /* ----------------------------------------------------------
 BREAKPOINTS
@@ -10,7 +11,6 @@ BREAKPOINTS
 $tablet: 768px;
 $desktop: 992px;
 $desktop-large: 1200px;
-$gutter: 30px;
 
 /* ----------------------------------------------------------
 FONTS
@@ -18,3 +18,8 @@ FONTS
 
 $serif: 'Merriweather', Georgia, 'Times New Roman', serif;
 $sans-serif: 'Open Sans', Helvetica, Arial, sans-serif;
+
+/* ----------------------------------------------------------
+TRANSITIONS
+----------------------------------------------------------- */
+$transition-default: 0.3s ease;

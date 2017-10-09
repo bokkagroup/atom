@@ -1,3 +1,16 @@
 .organism.icon-grid {
-    
+    padding: 3rem 0;
+    text-align: center;
+
+    @mixin tablet {
+        padding: 8rem 0;
+    }
+
+    .item {
+        margin: 0 0 3rem;
+
+        @mixin tablet {
+            @mixin column 1, 3;
+        }
+    }
 }

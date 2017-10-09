@@ -1,0 +1,13 @@
+.organism.content-grid-thumbnails-2 {
+    text-align: center;
+
+    .item {
+        margin: 0 0 3rem;
+
+        @mixin tablet {
+            @mixin column 1, 2;
+
+            margin: 0;
+        }
+    }
+}

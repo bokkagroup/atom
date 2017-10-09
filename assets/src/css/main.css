@@ -12,10 +12,15 @@ BASE STYLES
 /* ----------------------------------------------------------
 VENDOR
 ----------------------------------------------------------- */
+@import 'vendor/slick';
+@import 'vendor/jquery.fancybox';
 
 /* ----------------------------------------------------------
 ATOMS
 ----------------------------------------------------------- */
+@import 'atoms/button';
+@import 'atoms/embed';
+@import 'atoms/text';
 
 /* ----------------------------------------------------------
 MOLECULES
@@ -32,7 +37,7 @@ ORGANISMS
 @import 'organisms/carousel-4-up';
 @import 'organisms/content-columns-3';
 @import 'organisms/content-columns-4';
-@import 'organisms/content-grid-thumbnails-2';
+@import 'organisms/content-grid-w-thumbnails-2';
 @import 'organisms/conversion-point-w-modal-form';
 @import 'organisms/cta-w-multimedia';
 @import 'organisms/icon-grid';
@@ -41,11 +46,9 @@ ORGANISMS
 @import 'organisms/on-page-form';
 @import 'organisms/slider-gallery';
 @import 'organisms/testimonial';
-@import 'organisms/text-image-block';
 @import 'organisms/text-slider';
 @import 'organisms/text-w-background-image';
 @import 'organisms/video';
-
 
 /* ----------------------------------------------------------
 LAYOUTS

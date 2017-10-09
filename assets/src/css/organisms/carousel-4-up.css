@@ -1,3 +1,8 @@
 .organism.carousel-4-up {
-    
+    padding: 3rem 2rem;
+    text-align: center;
+
+    @mixin tablet {
+        padding: 5rem 0;
+    }
 }

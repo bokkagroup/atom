@@ -1,3 +1,7 @@
 .organism.cta-w-multimedia {
-    
+    padding: 3rem 0;
+
+    @mixin tablet {
+        padding: 8rem 0;
+    }
 }

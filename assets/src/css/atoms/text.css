@@ -1,0 +1,77 @@
+p,
+ol,
+ul {
+    font-size: 1.4rem;
+    line-height: 1.4;
+}
+
+h1,
+h2,
+h3,
+h4,
+h4 {
+    font-weight: normal;
+    line-height: 1.2;
+    margin: 0;
+}
+
+h1,
+.h1 {
+    font-size: 2.5rem;
+    letter-spacing: 0;
+    text-transform: none;
+
+    @mixin tablet {
+        font-size: 2.8rem;
+    }
+
+    @mixin desktop {
+        font-size: 4.5rem;
+    }
+}
+
+h2,
+.h2 {
+    font-size: 2rem;
+    text-transform: none;
+
+    @mixin tablet {
+        font-size: 2.5rem;
+    }
+
+    @mixin desktop {
+        font-size: 3rem;
+    }
+}
+
+h3,
+.h3 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    text-transform: uppercase;
+
+    @mixin tablet {
+        font-size: 1.8rem;
+    }
+
+    @mixin desktop {
+        font-size: 1.9rem;
+    }
+}
+
+h4,
+.h4 {
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+h5,
+.h5 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+strong {
+    font-weight: 700;
+}
