@@ -3,7 +3,11 @@
         {{> molecules/image}}
         <div class="text">
             <div class="title">
-                <h2>{{title}}</h2>
+                <h2>
+                    {{#if link}}<a href="{{link}}">{{/if}}
+                    {{title}}
+                    {{#if link}}</a>{{/if}}
+                </h2>
             </div><!--/title-->
             <div class="body">
                 {{#if description}}

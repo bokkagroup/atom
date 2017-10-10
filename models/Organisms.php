@@ -2,6 +2,8 @@
 
 namespace BokkaWP\Theme\models;
 
+use BokkaWP\helpers\Image as Image;
+
 class Organisms extends \BokkaWP\MVC\Model
 {
     public function initialize($id)
@@ -26,15 +28,9 @@ class Organisms extends \BokkaWP\MVC\Model
      */
     public function mapData($organism)
     {
-
         //setup boolean for basic handlebars if statement
         if (isset($organism['type'])) {
             $type = $organism['type'];
-
-            // Reassign form data to $organism['gform']
-            if ($type == 'form-basic' || $type == 'form-w-text') {
-                $organism['gform'] = $organism['form'];
-            }
 
             $organism[$type] = true;
         }
@@ -46,10 +42,7 @@ class Organisms extends \BokkaWP\MVC\Model
 
         //only show controls if there are greater 1 items
         if (isset($organism['type']) && (
-                $organism['type'] === "feature-slider" ||
-                $organism['type'] === "cta-w-gallery" ||
-                $organism['type'] === "slider-gallery" ||
-                $organism['type'] === "text-block-w-image"
+                $organism['type'] === "slider-gallery"
             )) {
             if (isset($organism['item']) && count($organism['item']) > 1) {
                 $organism['controls'] = true;
@@ -60,10 +53,9 @@ class Organisms extends \BokkaWP\MVC\Model
         }
 
         //get image urls for image fields (id)
-        if (isset($organism['image'])) {
+        if (!empty($organism['image'])) {
             $image_id = $organism['image'];
-            $size = isset($organism['image_size']) ? $organism['image_size'] : 'large';
-            $organism['image'] = wp_get_attachment_image_src($image_id, $size)[0];
+            $organism['image'] = new Image($image_id);
         }
 
         //recursively call this function on child items
