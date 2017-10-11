@@ -6,6 +6,10 @@ use BokkaWP\helpers\Image as Image;
 
 class Organisms extends \BokkaWP\MVC\Model
 {
+    /**
+     * Prepare post data for view
+     * @param  int $id WordPress Post ID
+     */
     public function initialize($id)
     {
         $post_id = isset($id) ? $id : get_the_ID();
@@ -28,19 +32,28 @@ class Organisms extends \BokkaWP\MVC\Model
      */
     public function mapData($organism)
     {
-        //setup boolean for basic handlebars if statement
+        /**
+         * Set organism type property equal to true
+         * for use in handlebars templates
+         */
         if (isset($organism['type'])) {
             $type = $organism['type'];
 
             $organism[$type] = true;
         }
 
-        //set a default id
-        if (!isset($organism['id']) && isset($organism['type'])) {
+        /**
+         * Set default organism ID property equal to the organism type
+         *
+         * TODO: Generate unique IDs if an organism is used multiple times on the page
+         */
+        if (empty($organism['id']) && isset($organism['type'])) {
             $organism['id'] = $organism['type'];
         }
 
-        //only show controls if there are greater 1 items
+        /**
+         * Allows gallery controls to show only if there is more than 1 item
+         */
         if (isset($organism['type']) && (
                 $organism['type'] === "slider-gallery"
             )) {
@@ -52,14 +65,37 @@ class Organisms extends \BokkaWP\MVC\Model
             }
         }
 
-        //get image urls for image fields (id)
+        /**
+         * Get Gravity Form object from form ID
+         */
+        if (!empty($organism['form'])) {
+            if (!empty($organism['form_id']) && function_exists('gravity_form')) {
+                $form = gravity_form($organism['form_id'], false, false, false, null, $ajax = true, 0, false);
+                $organism['gform'] = $form;
+            }
+        }
+
+        /**
+         * Set organism media_type property equal to true
+         * for use in handlebars templates
+         */
+        if ((isset($organism['type']) && $organism['type'] === 'cta-w-multimedia') && (!empty($organism['media_type']))) {
+            $organism[$organism['media_type']] = true;
+        }
+
+        /**
+         * Get image data from attacment ID
+         */
         if (!empty($organism['image'])) {
             $image_id = $organism['image'];
             $organism['image'] = new Image($image_id);
+            $organism['image']->setSrc('large');
         }
 
-        //recursively call this function on child items
-        if (isset($organism['item']) && $organism['item']) {
+        /**
+         * Call mapData recursively on all child items
+         */
+        if (isset($organism['item']) && !empty($organism['item'])) {
             $organism['item'] = array_map(array($this, 'mapData'), $organism['item']);
         }
 

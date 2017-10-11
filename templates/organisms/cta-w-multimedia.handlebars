@@ -1,7 +1,29 @@
 <div class="organism cta-w-multimedia" id="{{id}}">
     <section>
         <div class="container">
-
+            <div class="text">
+                <div class="title">
+                    <h2>{{title}}</h2>
+                    <h3>{{subtitle}}</h3>
+                </div>
+                <div class="body">
+                    {{{description}}}
+                </div>
+            </div><!--/text -->
+            {{#if photo-gallery}}
+                {{> molecules/photo-gallery}}
+            {{/if}}
+            {{#if video-embed}}
+            <div class="embed-container">
+                {{{video_embed_code}}}
+            </div>
+            {{/if}}
+            {{#if map-embed}}
+            <div class="embed-container">
+                {{{map_embed_code}}}
+            </div>
+            {{/if}}
+            {{> atoms/button}}
         </div><!--/container -->
     </section>
 </div><!--/cta-w-multimedia-->

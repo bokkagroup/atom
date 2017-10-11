@@ -6,27 +6,31 @@
                     <h2 class="h1">{{title}}</h2>
                 </div>
                 <div class="subtitle">
-                    {{{description}}}
+                    {{subtitle}}
                 </div>
             </div><!--/header -->
 
             <div class="items">
                 {{#each item}}
                     <div class="item">
-                        <div class="image">
-                            <img src="{{image.small}}">
-                        </div><!--/image -->
+                        {{> molecules/image}}
                         <div class="text">
-                            <div class="title">
-                                <h5>{{title}}</h5>
-                            </div>
-                            <div class="body">
-                                {{{description}}}
-                            </div>
+                            {{#if title}}
+                                <div class="title">
+                                    <h5>{{title}}</h5>
+                                </div>
+                            {{/if}}
+                            {{#if description}}
+                                <div class="body">
+                                    {{{description}}}
+                                </div>
+                            {{/if}}
+                            {{> atoms/button}}
                         </div>
                     </div><!--/item-->
                 {{/each}}
             </div><!--/items-->
+            {{> atoms/button}}
         </div><!--/container-->
     </section>
 </div><!--/content-columns-4-->
