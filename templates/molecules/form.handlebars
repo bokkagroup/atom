@@ -1,13 +1,15 @@
 {{#if form}}
     <div class="form molecule">
-        <div class="title">
-            {{#if form_title}}
-            <h2>{{form_title}}</h2>
-            {{/if}}
-            {{#if form_subtitle}}
-            <h3>{{form_subtitle}}</h3>
-            {{/if}}
-        </div><!--/title-->
+        <header>
+            <div class="title">
+                {{#if form_title}}
+                <h2>{{form_title}}</h2>
+                {{/if}}
+                {{#if form_subtitle}}
+                <h3>{{form_subtitle}}</h3>
+                {{/if}}
+            </div><!--/title-->
+        </header>
         {{{gform}}}
         {{#if form_footer}}
         <footer>
