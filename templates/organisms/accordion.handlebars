@@ -3,15 +3,7 @@
         <div class="container">
             {{#each item}}
                 <div class="item">
-                    <div class="title">
-                        <h3>{{title}}</h3>
-                        {{#if subtitle}}
-                            <h4>{{subtitle}}</h4>
-                        {{/if}}
-                    </div>
-                    <div class="body">
-                        {{{description}}}
-                    </div>
+                    {{> molecules/text}}
                 </div>
             {{/each}}
         </div><!--/container -->

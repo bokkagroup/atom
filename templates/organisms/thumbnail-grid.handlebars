@@ -1,13 +1,6 @@
 <div class="organism thumbnail-grid" id="{{id}}">
     <div class="container">
-
-        {{#if title}}
-            <h2>{{title}}</h2>
-        {{/if}}
-        {{#if subtitle}}
-            <h3>{{subtitle}}</h3>
-        {{/if}}
-
+        {{> molecules/text}}
         {{#each item}}
             <div class="item">
                 <img src="{{image}}">

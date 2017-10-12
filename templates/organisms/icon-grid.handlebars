@@ -1,20 +1,7 @@
 <div class="organism icon-grid" id="{{id}}">
     <section>
         <div class="container">
-            <div class="text">
-                {{#if title}}
-                <div class="title">
-                    <h2 class="caps">{{{title}}}</h2>
-                </div>
-                {{/if}}
-
-                {{#if subtitle}}
-                <div class="subtitle">
-                    <h3 class="caps">{{subtitle}}</h3>
-                </div>
-                {{/if}}
-            </div>
-
+            {{> molecules/text}}
             <ul>
                 {{#each item}}
                     <li>

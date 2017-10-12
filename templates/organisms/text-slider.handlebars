@@ -1,7 +1,14 @@
 <div class="organism text-slider" id="{{id}}">
     <section>
         <div class="container">
-
+            {{> molecules/text}}
+            <div class="slider">
+                <ul class="slides">
+                    {{#each item}}
+                    {{> molecules/slide}}
+                    {{/each}}
+                </ul>
+            </div>
         </div><!--/container -->
     </section>
 </div><!--/text-slider-->

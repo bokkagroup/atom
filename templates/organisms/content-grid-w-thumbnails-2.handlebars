@@ -1,15 +1,7 @@
 <div class="organism content-grid-w-thumbnails-2" id="{{id}}">
     <section>
         <div class="container">
-            <div class="text">
-                <div class="title">
-                    <h2>{{title}}</h2>
-                </div>
-                <div class="subtitle">
-                    <h3>{{subtitle}}</h3>
-                </div>
-            </div><!--/text -->
-
+            {{> molecules/text}}
             {{#each item}}
                 <div class="item">
                     <div class="title">

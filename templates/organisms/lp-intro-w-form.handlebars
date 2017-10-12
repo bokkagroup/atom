@@ -2,28 +2,7 @@
     <section>
         <div class="container">
             <div class="main">
-                <div class="text">
-
-                    {{#if title}}
-                    <div class="title">
-                        <h2 class="caps">{{{title}}}</h2>
-                    </div>
-                    {{/if}}
-
-                    {{#if subtitle}}
-                    <div class="subtitle">
-                        <h3 class="caps">{{subtitle}}</h3>
-                    </div>
-                    {{/if}}
-
-                    {{#if description}}
-                    <div class="body">
-                        {{{description}}}
-                    </div>
-                    {{/if}}
-
-                </div><!--/text -->
-
+                {{> molecules/text}}
                 <div class="form-column">
                     <div class="form-wrapper">
                         <span id="form" class="form-anchor"></span>

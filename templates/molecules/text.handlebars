@@ -1,15 +1,17 @@
-<div class="text">
-    <div class="title">
-        {{#if title}}
-        <h2>{{title}}</h2>
-        {{/if}}
-        {{#if subtitle}}
-        <h3>{{subtitle}}</h3>
-        {{/if}}
-    </div>
+<div class="text molecule">
+    <header>
+        <div class="title">
+            {{#if title}}
+            <h2>{{title}}</h2>
+            {{/if}}
+            {{#if subtitle}}
+            <h3>{{subtitle}}</h3>
+            {{/if}}
+        </div>
+    </header>
     {{#if description}}
     <div class="body">
         {{{description}}}
     </div>
     {{/if}}
-</div><!--/text -->
+</div><!--/text-->

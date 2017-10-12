@@ -1,14 +1,7 @@
 <div class="organism video" id="{{id}}">
     <section>
         <div class="container">
-            <div class="text">
-                <div class="title">
-                    <h2>{{title}}</h2>
-                </div>
-                <div class="body">
-                    {{subtitle}}
-                </div>
-            </div><!--/text -->
+            {{> molecules/text}}
             <div class="embed-container">
                 {{{video_embed_code}}}
             </div>
