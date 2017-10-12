@@ -4,17 +4,15 @@
             {{> molecules/image}}
             <div class="text">
                 {{#if title}}
-                    <div class="title">
-                        <h1>{{title}}</h1>
-                    </div>
-                {{/if}}
-                {{#if subtitle}}
-                    <div class="subtitle">
-                        <h2>{{subtitle}}</h2>
-                    </div>
+                <div class="title">
+                    <h1>{{title}}</h1>
+                    {{#if subtitle}}
+                    <h2>{{subtitle}}</h2>
+                    {{/if}}
+                </div>
                 {{/if}}
                 {{> atoms/button}}
-            </div>
-        </div><!--/container -->
+            </div><!--/text-->
+        </div><!--/container-->
     </section>
 </div><!--/brand-window-->

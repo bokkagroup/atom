@@ -16,7 +16,6 @@ class Organisms extends \BokkaWP\MVC\Model
         $organisms = get_field('organism', $post_id);
 
         if (is_array($organisms)) {
-            //recursively loop through our array
             $this->data = array_map(array($this, 'mapData'), $organisms);
         } else {
             $this->data = array();
@@ -38,7 +37,6 @@ class Organisms extends \BokkaWP\MVC\Model
          */
         if (isset($organism['type'])) {
             $type = $organism['type'];
-
             $organism[$type] = true;
         }
 
@@ -52,21 +50,9 @@ class Organisms extends \BokkaWP\MVC\Model
         }
 
         /**
-         * Allows gallery controls to show only if there is more than 1 item
-         */
-        if (isset($organism['type']) && (
-                $organism['type'] === "slider-gallery"
-            )) {
-            if (isset($organism['item']) && count($organism['item']) > 1) {
-                $organism['controls'] = true;
-            }
-            if (isset($organism['gallery']) && count($organism['gallery']) > 1) {
-                $organism['controls'] = true;
-            }
-        }
-
-        /**
          * Get Gravity Form object from form ID
+         *
+         * Use {{{gform}}} within template to render form
          */
         if (!empty($organism['form'])) {
             if (!empty($organism['form_id']) && function_exists('gravity_form')) {
@@ -84,12 +70,34 @@ class Organisms extends \BokkaWP\MVC\Model
         }
 
         /**
-         * Get image data from attacment ID
+         * Loop through all images in gallery and get attachment data
+         */
+        if (!empty($organism['gallery'])) {
+            $organism['gallery'] = array_map(function ($image) use ($organism) {
+                $image['image'] = new Image($image['id']);
+
+                // Organism specific modifiers
+                if (isset($organism['type'])) {
+                    if ($organism['type'] === 'slider-gallery') {
+                        $image['image']->setSrc('medium');
+                        $image['title'] = null;
+                    }
+                }
+
+                return $image;
+            }, $organism['gallery']);
+        }
+
+        /**
+         * Get image/background image data from attachment ID
          */
         if (!empty($organism['image'])) {
-            $image_id = $organism['image'];
-            $organism['image'] = new Image($image_id);
-            $organism['image']->setSrc('large');
+            $organism['image'] = new Image($organism['image']);
+            $organism['image']->setSrc('large'); // TODO: remove, for testing only
+        }
+
+        if (!empty($organism['background_image'])) {
+            $organism['background_image'] = new Image($organism['background_image']);
         }
 
         /**

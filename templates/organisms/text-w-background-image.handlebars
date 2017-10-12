@@ -1,4 +1,4 @@
-<div class="organism text-w-background-image" id="{{id}}" style="background-image:url('{{image}}');">
+<div class="organism text-w-background-image" id="{{id}}" {{#if background_image}}style="background-image:url('{{background_image.src}}');"{{/if}}>
     <section>
         <div class="container">
             {{> molecules/text}}

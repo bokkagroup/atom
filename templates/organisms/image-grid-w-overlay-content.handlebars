@@ -4,7 +4,7 @@
             <div class="grid">
                 {{#each item}}
                     {{#if item_link}}<a href="{{url}}" target="_blank">{{/if}}
-                    <div class="item" style="background-image: url('{{background_image}}');">
+                    <div class="item" {{#if background_image}}style="background-image:url('{{background_image.src}}');"{{/if}}>
                         <div class="content">
                             {{> molecules/image}}
                             {{#if sub_title}}
