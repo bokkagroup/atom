@@ -3,14 +3,14 @@
         <div class="container">
             {{> molecules/image}}
             <div class="text">
-                {{#if title}}
                 <div class="title">
+                    {{#if title}}
                     <h1>{{title}}</h1>
+                    {{/if}}
                     {{#if subtitle}}
                     <h2>{{subtitle}}</h2>
                     {{/if}}
                 </div>
-                {{/if}}
                 {{> atoms/button}}
             </div><!--/text-->
         </div><!--/container-->

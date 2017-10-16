@@ -1,7 +1,9 @@
 <div class="photo-gallery molecule">
     {{#each gallery}}
+        {{#with image}}
         <a href="{{this.url}}" title="{{this.caption}}">
-            <img src="{{this.sizes.thumbnail}}" alt=" ">
+            <img src="{{this.src}}" alt=" ">
         </a>
+        {{/with}}
     {{/each}}
 </div>

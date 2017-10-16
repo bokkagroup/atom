@@ -3,18 +3,18 @@
         <div class="container">
             <div class="grid">
                 {{#each item}}
-                    {{#if item_link}}<a href="{{url}}" target="_blank">{{/if}}
-                    <div class="item" {{#if background_image}}style="background-image:url('{{background_image.src}}');"{{/if}}>
-                        <div class="content">
+                    {{#if item_link}}
+                    <a href="{{url}}" target="_blank">
+                    {{/if}}
+                        <div class="item" {{#if background_image}}style="background-image:url('{{background_image.src}}');"{{/if}}>
                             {{> molecules/image}}
-                            {{#if sub_title}}
-                                <div class="subtitle">
-                                    {{sub_title}}
-                                </div>
-                            {{/if}}
+                            <div class="content">
+                                {{> molecules/text}}
+                            </div>
                         </div>
-                    </div>
-                    {{#if item_link}}</a>{{/if}}
+                    {{#if item_link}}
+                    </a>
+                    {{/if}}
                 {{/each}}
             </div>
         </div><!--/container -->

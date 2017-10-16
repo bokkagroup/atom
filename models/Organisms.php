@@ -7,6 +7,12 @@ use BokkaWP\helpers\Image as Image;
 class Organisms extends \BokkaWP\MVC\Model
 {
     /**
+     * Keep track of organisms on page for unique ID attributes
+     * @var array
+     */
+    private $organism_count = array();
+
+    /**
      * Prepare post data for view
      * @param  int $id WordPress Post ID
      */
@@ -41,12 +47,18 @@ class Organisms extends \BokkaWP\MVC\Model
         }
 
         /**
-         * Set default organism ID property equal to the organism type
-         *
-         * TODO: Generate unique IDs if an organism is used multiple times on the page
+         * Set default organism ID property equal to the organism type.
          */
         if (empty($organism['id']) && isset($organism['type'])) {
-            $organism['id'] = $organism['type'];
+            $this->organism_count[] = $organism['type'];
+
+            $organism_count_values = array_count_values($this->organism_count);
+
+            if ($organism_count_values[$organism['type']] > 1) {
+                $organism['id'] = $organism['type'] . '-' . $organism_count_values[$organism['type']];
+            } else {
+                $organism['id'] = $organism['type'];
+            }
         }
 
         /**
@@ -78,9 +90,17 @@ class Organisms extends \BokkaWP\MVC\Model
 
                 // Organism specific modifiers
                 if (isset($organism['type'])) {
+                    if ($organism['type'] === 'cta-w-multimedia') {
+                        $image['image']->setSrc('thumbnail');
+                    }
+
                     if ($organism['type'] === 'slider-gallery') {
                         $image['image']->setSrc('medium');
                         $image['title'] = null;
+                    }
+
+                    if ($organism['type'] === 'thumbnail-grid') {
+                        $image['image']->setSrc('thumbnail');
                     }
                 }
 

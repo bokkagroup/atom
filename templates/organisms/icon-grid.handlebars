@@ -3,13 +3,12 @@
         <div class="container">
             {{> molecules/text}}
             <ul>
-                {{#each item}}
-                    <li>
-                        {{#if link}}<a href="{{link}}">{{/if}}
-                            <span class="image icon {{icon}}"></span>
-                            <div class="text">{{title}}</div>
-                        {{#if link}}</a>{{/if}}
-                    </li>
+                {{#each gallery}}
+                <li>
+                    <span class="icon">
+                        <img src="{{this.url}}" alt=" ">
+                    </span>
+                </li>
                 {{/each}}
             </ul>
         </div><!--/container -->

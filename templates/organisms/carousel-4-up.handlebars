@@ -4,17 +4,7 @@
             {{> molecules/text}}
             <div class="carousel">
                 {{#each item}}
-                    <div class="item">
-                        {{> molecules/image}}
-                        <div class="text">
-                            <div class="title">
-                                <h5>{{title}}</h5>
-                            </div>
-                            <div class="body">
-                                {{{description}}}
-                            </div>
-                        </div>
-                    </div>
+                    {{> molecules/slide}}
                 {{/each}}
             </div><!--/carousel -->
         </div><!--/container-->

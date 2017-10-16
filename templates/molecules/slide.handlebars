@@ -1,21 +1,5 @@
 <li class="slide">
     {{> molecules/image}}
-    <div class="text">
-        {{#if title}}
-        <div class="title">
-            <h2>{{title}}</h2>
-        </div>
-        {{/if}}
-        {{#if subtitle}}
-        <div class="subtitle">
-            <h3>{{subtitle}}</h3>
-        </div>
-        {{/if}}
-        {{#if description}}
-        <div class="body">
-            {{{description}}}
-        </div>
-        {{/if}}
-        {{> atoms/button}}
-    </div><!--/text-->
+    {{> molecules/text}}
+    {{> atoms/button}}
 </li>

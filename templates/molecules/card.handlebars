@@ -1,23 +1,20 @@
 <div class="molecule card">
     {{> molecules/image}}
     <div class="text">
+        {{#if title}}
         <div class="title">
             <h2>
-                {{#if link}}<a href="{{link}}">{{/if}}
-                {{title}}
-                {{#if link}}</a>{{/if}}
+            {{#if link}}<a href="{{link}}">{{/if}}
+            {{title}}
+            {{#if link}}</a>{{/if}}
             </h2>
         </div><!--/title-->
+        {{/if}}
+        {{#if description}}
         <div class="body">
-            {{#if description}}
-                {{{description}}}
-            {{/if}}
-            {{#if subtitle}}
-                <div class="subtitle">
-                    <span>{{{subtitle}}}</span>
-                </div>
-            {{/if}}
-            {{> atoms/button}}
+            {{{description}}}
         </div><!--/body-->
+        {{/if}}
     </div><!--/text-->
+    {{> atoms/button}}
 </div><!--/card-->
