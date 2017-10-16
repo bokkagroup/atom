@@ -1,7 +1,7 @@
 <?php
 get_template_part('templates/head');
 get_template_part('templates/header');
-do_action('bokkawptheme_before_content'); ?>
+do_action('catalystwptheme_before_content'); ?>
 
     <div id="content" class="content">
         <?php
@@ -25,7 +25,7 @@ do_action('bokkawptheme_before_content'); ?>
         ?>
     </div><!--/content-->
 
-<?php do_action('bokkawptheme_after_content');
+<?php do_action('catalystwptheme_after_content');
 get_template_part('templates/footer');
 
 ?>

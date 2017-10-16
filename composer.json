@@ -1,8 +1,14 @@
 {
-    "name": "bokkagroup/atom",
+    "name": "bokkagroup/catalyst-wp-theme",
     "type": "wordpress-theme",
-    "description": "Theme built for the Catalyst WordPress framework by the Bokka Group",
+    "description": "Theme built for the Catalyst WP Toolbox.",
     "license": "GNU2",
+    "authors": [
+        {
+            "name": "Bokkagroup",
+            "email": "mike@bokkagroup.com"
+        }
+    ],
     "require": {
         "composer/installers": "~1.0"
     }
