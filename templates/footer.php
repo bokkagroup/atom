@@ -4,7 +4,7 @@
  *
  * This is the template closes our html our footer, scripts are injected into here.
  *
- * @package bokka_wp_theme
+ * @package catalyst_wp_theme
  */
 ?>
     </div><!--/site-wrapper-->

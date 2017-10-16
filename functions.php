@@ -1,10 +1,10 @@
 <?php
 /**
- * bokka_wp_theme functions and definitions.
+ * catalyst_wp_theme functions and definitions.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package bokka_wp_theme
+ * @package catalyst_wp_theme
  */
 add_action(
     'after_setup_theme',
@@ -19,13 +19,18 @@ add_action(
     function () {
 
         include_once 'config.php';
+        include_once 'admin/global.php';
+
+        if (is_user_logged_in()) {
+            update_user_option_admin_color();
+        }
         /*
          * Make theme available for translation.
          * Translations can be filed in the /languages/ directory.
-         * If you're building a theme based on bokka_wp_theme, use a find and replace
-         * to change 'bokka_wp_theme' to the name of your theme in all the template files.
+         * If you're building a theme based on catalyst_wp_theme, use a find and replace
+         * to change 'catalyst_wp_theme' to the name of your theme in all the template files.
          */
-        load_theme_textdomain('bokka_wp_theme', get_template_directory() . '/languages');
+        load_theme_textdomain('catalyst_wp_theme', get_template_directory() . '/languages');
 
         /*
          * Let WordPress manage the document title.

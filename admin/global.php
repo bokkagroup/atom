@@ -4,21 +4,21 @@
  * @param $color_scheme
  * @return string
  */
-function update_user_option_admin_color($color_scheme)
+function update_user_option_admin_color()
 {
-    if (BOKKA_ENV == 'local') {
+    $color_scheme = 'light';
+
+    if (CATALYST_WP_ENV == 'local') {
         $color_scheme = 'ocean';
     }
 
-    if (BOKKA_ENV == 'staging') {
+    if (CATALYST_WP_ENV == 'staging') {
         $color_scheme = 'ectoplasm';
     }
 
-    if (BOKKA_ENV == 'production') {
+    if (CATALYST_WP_ENV == 'production') {
         $color_scheme = 'sunrise';
     }
 
-    return $color_scheme;
+    update_user_meta(get_current_user_id(), 'admin_color', $color_scheme);
 }
-
-add_filter('get_user_option_admin_color', 'update_user_option_admin_color', 5);
