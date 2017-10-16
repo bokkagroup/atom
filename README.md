@@ -118,14 +118,14 @@ Our environment is set up to allow us to build templates with [Handlebars](http:
 
 * Because our MVC plugin automatically attaches ACF fields to your model, you can access ACF field data in your templates by using expressions such as `{{field_name}}`. This will work pretty seamlessly out-of-the-box with fields that return a single value or an array.
 
-**Example:** Say we have a [repeater](https://www.advancedcustomfields.com/resources/repeater/) field called `links`, with sub-fields `title` and `url`. We want to output an unordered list of these links. Using standard WordPress templating, our code would look like this: 
+**Example:** Say we have a [repeater](https://www.advancedcustomfields.com/resources/repeater/) field called `links`, with sub-fields `title` and `url`. We want to output an unordered list of these links. Using standard WordPress templating, our code would look like this:
 
 ```
 <?php if( have_rows('links') ): ?>
 
   <ul>
 
-  <?php while( have_rows('links') ): the_row(); 
+  <?php while( have_rows('links') ): the_row();
     $title = get_sub_field('title');
     $url = get_sub_field('url');
     ?>
@@ -160,24 +160,24 @@ Within the Bokka WP framework, we can accomplish the same thing using significan
  * SASS Compilation task
  * More documentation (possibly screencasts)
  * gulp plumber
- 
+
 ## Installation
- 
+
  Download this theme and add it to your themes directory and activate in the WordPress Admin
- 
+
 ### Child Theming
- 
+
  Special considerations should be made when porting this into a child theme. We have a boilerplate that comes with WordPress core, along with our typical plugins and this theme in an optimized parent/child format.
  It is recommended to use that boilerplate if you wish to use this as a child theme.
- 
+
 ## Usage
- 
+
  It's worth reading all of the documentation below to understand the Bokka WP Theme ecosystem. Things that most WP developers are used to like adding code to `functions.php` is generally a no-no and should be avoided at all costs.
- 
+
 
 ### Routing
 
-__index.php__ - If you're familiar with other MVC environments you're likely familiar with a router. The idea is fairly simple, have a single point of entry that loads each part of the application as it's needed. More ofthen than not, these routes correlate directly to a page or data type. 
+__index.php__ - If you're familiar with other MVC environments you're likely familiar with a router. The idea is fairly simple, have a single point of entry that loads each part of the application as it's needed. More ofthen than not, these routes correlate directly to a page or data type.
 
 WordPress has a built in router. If you've built custom themes before you know that you can use specific naming conventions for your files that WordPress will automatically use in specific situations. For example `single-carrots.php` will be used to display the details of a single post of the post type `carrots`.
 
@@ -188,11 +188,11 @@ We don't have to use these multiple files which often clutters our our codebase.
  * `is_singular()`
  * `is_post_type_archive()`
  * `is_404()`
- 
+
 Eventually this might translate into your `index.php` having something like the following
 ```
 if (is_front_page()) {
-    new \BokkaWP\Theme\controllers\HomeController();
+    new \CatalystWP\Theme\controllers\HomeController();
 }
 ```
 
@@ -204,7 +204,7 @@ Essentially this methodology creates a trail of breadcrumbs that will make it ea
 Generally when we take this approach we'll only be loading our controllers. Our controllers are essentially the thing that controls what happens when that route is met. A controller for a page might look different than a controller for a custom post type as each needs to be handled differently. You'll want to make sure you're providing a default case as well. Generally, we have both a 404 case at the bottom of my `if/elseif` structure as well as a default `else` at the end to handle anything that we didn't catch.
 ```
 if (is_front_page()) {
-    new \BokkaWP\Theme\controllers\HomeController();
+    new \CatalystWP\Theme\controllers\HomeController();
 } elseif (is_404()) {
     //handle 404 here
 } else {
@@ -226,16 +226,16 @@ __A little on our templating file structure__
  +-- molecules - `Molecules are a culmination of atoms such as a input & a button for search`
  +-- organisms - `Organisms make up multiple molecules such as a navigation & a search molecule`
  +-- pages - `Pages bring organisms together to make full page templates`
- 
+
  __Child Theming__
  If a templates directory isn't defined in a child theme BokkaMVC will utilize a templates directory inside of a parent theme. It is recommended to copy all templates from the parent into the child as BokkaMVC will only load templates from a single location.
- 
+
 ### Hooks (actions/filters)
 
- This theme is fully compatible with WordPress' built in actions & filters. When you typically inherit a WordPress project, you will likely look into functions.php and see abundant actions, filters, and includes that dictate how your application is run. This code is generally poorly organized, monolithic, and difficult to maintain. 
+ This theme is fully compatible with WordPress' built in actions & filters. When you typically inherit a WordPress project, you will likely look into functions.php and see abundant actions, filters, and includes that dictate how your application is run. This code is generally poorly organized, monolithic, and difficult to maintain.
  We've added a hooks folder for providing more organization, but it is up to you to take it a step further. All hooks should be organized in files specific to functionality. An example might be that you have custom permalinks that hook into a filter like so `add_filter('post_type_link', 'custom_permalink_function', 10, 4);` It's probably best to put this type of code into it's own file `hooks/permalinks.php`. Once we add a file to the hooks directory it will automatically be included by our `functions.php`
- 
- 
+
+
 ### Configuration
 
 ### Controllers

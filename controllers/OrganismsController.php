@@ -1,8 +1,8 @@
 <?php
 
-namespace BokkaWP\Theme\controllers;
+namespace CatalystWP\Theme\controllers;
 
-class OrganismsController extends \BokkaWP\MVC\Controller
+class OrganismsController extends \CatalystWP\MVC\Controller
 {
     public function initialize()
     {

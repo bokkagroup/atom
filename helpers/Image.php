@@ -1,6 +1,6 @@
 <?php
 
-namespace BokkaWP\helpers;
+namespace CatalystWP\helpers;
 
 /**
  * Returns a new instance of an Image object

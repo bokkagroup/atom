@@ -1,7 +1,7 @@
 <?php
-namespace BokkaWP\Theme\views;
+namespace CatalystWP\Theme\views;
 
-class OrganismsView extends \BokkaWP\MVC\View
+class OrganismsView extends \CatalystWP\MVC\View
 {
     public function initialize()
     {

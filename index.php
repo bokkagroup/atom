@@ -1,5 +1,5 @@
 <?php
-use BokkaWP\Theme\controllers\OrganismsController;
+use CatalystWP\Theme\controllers\OrganismsController;
 
 //Determine which controller to use
 if (is_singular('communities')) {

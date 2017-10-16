@@ -1,10 +1,10 @@
 <?php
 
-namespace BokkaWP\Theme\models;
+namespace CatalystWP\Theme\models;
 
-use BokkaWP\helpers\Image as Image;
+use CatalystWP\helpers\Image as Image;
 
-class Organisms extends \BokkaWP\MVC\Model
+class Organisms extends \CatalystWP\MVC\Model
 {
     /**
      * Keep track of organisms on page for unique ID attributes
