@@ -15,11 +15,11 @@ var postcss         = require('gulp-postcss');
 var sourcemaps      = require('gulp-sourcemaps');
 var nano            = require('gulp-cssnano');
 var livereload      = require('gulp-livereload');
-var cache           = require('gulp-cached');
 
 gulp.task('style-lint', function () {
 
     var SRC = [
+        'assets/src/css/main.css',
         'assets/src/css/**/*.css',
         '!assets/src/css/utility/reset.css',
         '!assets/src/css/vendor/*.css',
@@ -27,7 +27,6 @@ gulp.task('style-lint', function () {
     ];
 
     return gulp.src(SRC)
-        .pipe(cache('style-linting'))
         .pipe(postcss([
             // See .stylelintrc for configuration options
             require('stylelint'),
