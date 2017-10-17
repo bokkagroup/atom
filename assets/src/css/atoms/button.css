@@ -1,5 +1,5 @@
 button,
-.button {
+.button a {
     appearance: none;
     background: $gray;
     border: none;
@@ -14,4 +14,8 @@ button,
     text-decoration: none;
     text-transform: uppercase;
     transition: color $transition-default, background-color $transition-default, opacity $transition-default;
+
+    &:visited {
+        color: $white;
+    }
 }

@@ -1,7 +1,19 @@
-import $ from 'jQuery';
+import $        from 'jquery';
+import slick    from 'slick-carousel';
 
 $(document).ready(() => {
 
-    //...code
+    /**
+     * Sliders
+     */
+    $('.brand-window-slider .slides').slick({
+        dots: false
+    });
 
+    /**
+     * Accordion
+     */
+    $('.accordion .title').on('click', function (event) {
+        $(this).closest('.item').toggleClass('open');
+    });
 });

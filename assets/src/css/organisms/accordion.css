@@ -4,4 +4,23 @@
     @mixin tablet {
         padding: 8rem 0;
     }
+
+    .item {
+        margin: 0 0 1rem;
+        width: 100%;
+    }
+
+    .title:hover {
+        cursor: pointer;
+    }
+
+    .body {
+        display: none;
+    }
+
+    .item.open {
+        .body {
+            display: block;
+        }
+    }
 }

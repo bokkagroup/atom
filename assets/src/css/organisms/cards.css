@@ -1,8 +1,12 @@
-.organism.basic-content-block {
+.organism.cards {
     padding: 3rem 0;
     text-align: center;
 
     @mixin tablet {
         padding: 8rem 0;
+
+        .card {
+            lost-column: 1/2 0;
+        }
     }
 }

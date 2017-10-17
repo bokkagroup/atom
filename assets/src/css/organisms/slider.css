@@ -1,0 +1,23 @@
+/* Global slider styles */
+.slider {
+    .slides {
+        @mixin list-reset;
+
+        position: relative;
+    }
+
+    .slick-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+    }
+
+    .slick-prev {
+        left: 0;
+    }
+
+    .slick-next {
+        right: 0;
+    }
+}

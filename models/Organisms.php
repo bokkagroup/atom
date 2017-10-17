@@ -32,32 +32,34 @@ class Organisms extends \CatalystWP\MVC\Model
      * Provides various formatting to our organisms and then recursively calls itself on the organism
      * does things like gets images form their ID, generates Gform data via it's id, so on and so fourth
      * very similar to our viewFilters
-     * @param $organism
-     * @return array
+     *
+     * @param  array    $organism       Array of organism data from ACF fields
+     * @param  string   $parentType     Parent organism type value for nested item arrays
+     * @return array                    Formatted organism data
      */
-    public function mapData($organism)
+    public function mapData($organism, $parentType = null)
     {
         /**
          * Set organism type property equal to true
          * for use in handlebars templates
          */
         if (isset($organism['type'])) {
-            $type = $organism['type'];
-            $organism[$type] = true;
+            $organism[$organism['type']] = true;
         }
 
         /**
          * Set default organism ID property equal to the organism type.
          */
-        if (empty($organism['id']) && isset($organism['type'])) {
-            $this->organism_count[] = $organism['type'];
+        if (empty($organism['id']) && isset($organism['type']) && !$parentType) {
+            if (is_string($organism['type']) && strlen($organism['type']) > 1) {
+                $this->organism_count[] = $organism['type'];
+                $organism_count_values = array_count_values($this->organism_count);
 
-            $organism_count_values = array_count_values($this->organism_count);
-
-            if ($organism_count_values[$organism['type']] > 1) {
-                $organism['id'] = $organism['type'] . '-' . $organism_count_values[$organism['type']];
-            } else {
-                $organism['id'] = $organism['type'];
+                if ($organism_count_values[$organism['type']] > 1) {
+                    $organism['id'] = $organism['type'] . '-' . $organism_count_values[$organism['type']];
+                } else {
+                    $organism['id'] = $organism['type'];
+                }
             }
         }
 
@@ -113,7 +115,11 @@ class Organisms extends \CatalystWP\MVC\Model
          */
         if (!empty($organism['image'])) {
             $organism['image'] = new Image($organism['image']);
-            $organism['image']->setSrc('large'); // TODO: remove, for testing only
+
+            // Organism specific modifiers
+            if ($parentType === 'brand-window-slider') {
+                $organism['image']->setSrc('brand-window-slider');
+            }
         }
 
         if (!empty($organism['background_image'])) {
@@ -123,10 +129,23 @@ class Organisms extends \CatalystWP\MVC\Model
         /**
          * Call mapData recursively on all child items
          */
-        if (isset($organism['item']) && !empty($organism['item'])) {
-            $organism['item'] = array_map(array($this, 'mapData'), $organism['item']);
+        if (isset($organism['item']) && is_array($organism['item']) && !empty($organism['item'])) {
+            $organism['item'] = $this->mapItemData($organism['item'], $organism['type']);
         }
 
         return $organism;
+    }
+
+    /**
+     * Provide anonymous function for passing values to mapData function
+     * @param  array  $items      Array of child fields
+     * @param  string $parentType Parent organism type
+     * @return array              Array of child fields run through mapData
+     */
+    public function mapItemData(array $items, string $parentType)
+    {
+        return array_map(function ($item) use ($parentType) {
+            return $this->mapData($item, $parentType);
+        }, $items);
     }
 }

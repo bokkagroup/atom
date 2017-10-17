@@ -12,8 +12,7 @@ BASE STYLES
 /* ----------------------------------------------------------
 VENDOR
 ----------------------------------------------------------- */
-@import 'vendor/slick';
-@import 'vendor/jquery.fancybox';
+@import 'slick-carousel/slick/slick';
 
 /* ----------------------------------------------------------
 ATOMS
@@ -25,6 +24,7 @@ ATOMS
 /* ----------------------------------------------------------
 MOLECULES
 ----------------------------------------------------------- */
+@import 'molecules/slide';
 
 /* ----------------------------------------------------------
 ORGANISMS
@@ -49,6 +49,7 @@ ORGANISMS
 @import 'organisms/text-slider';
 @import 'organisms/text-w-background-image';
 @import 'organisms/video';
+@import 'organisms/slider';
 
 /* ----------------------------------------------------------
 LAYOUTS

@@ -5,17 +5,17 @@ GRID
 @lost gutter 30px;
 
 .container {
-    lost-center: 100%;
+    lost-center: 100% 15px;
 
     @mixin tablet {
-        lost-center: 740px;
+        lost-center: 740px 15px;
     }
 
     @mixin desktop {
-        lost-center: 960px;
+        lost-center: 960px 15px;
     }
 
     @mixin desktop-large {
-        lost-center: 1160px;
+        lost-center: 1160px 15px;
     }
 }
