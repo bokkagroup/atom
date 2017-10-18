@@ -1,8 +1,8 @@
 {{#if button}}
     <div class="button atom">
-        <a href="{{link}}"
-            title="{{#if button_text}}{{button_text}}{{/if}}"
-            class="link">
+        <a href="{{#if link}}{{link}}{{else}}#{{modal_target}}{{/if}}"
+           title="{{#if button_text}}{{button_text}}{{/if}}"
+           class="{{#if link}}link{{else}}modal{{/if}}">
             {{button_text}}
         </a>
     </div>

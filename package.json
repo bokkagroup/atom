@@ -13,6 +13,7 @@
     "del": "^3.0.0",
     "eslint": "^3.4.0",
     "eslint-loader": "^1.5.0",
+    "fancybox": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-cssnano": "^2.1.1",
     "gulp-if": "^2.0.2",

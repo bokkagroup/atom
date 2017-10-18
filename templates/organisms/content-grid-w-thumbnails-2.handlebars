@@ -2,19 +2,11 @@
     <section>
         <div class="container">
             {{> molecules/text}}
-            {{#each item}}
-                <div class="item">
-                    <div class="title">
-                        <h3>{{title}}</h3>
-                        {{#if subtitle}}
-                            <h4>{{subtitle}}</h4>
-                        {{/if}}
-                    </div>
-                    <div class="body">
-                        {{{description}}}
-                    </div>
-                </div>
-            {{/each}}
+            <div class="grid">
+                {{#each item}}
+                    {{> molecules/card}}
+                {{/each}}
+            </div>
         </div><!--/container -->
     </section>
 </div><!--/content-grid-thumbnails-2-->

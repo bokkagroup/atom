@@ -4,22 +4,7 @@
             {{> molecules/text}}
             <div class="items">
                 {{#each item}}
-                    <div class="item">
-                        {{> molecules/image}}
-                        <div class="text">
-                            {{#if title}}
-                                <div class="title">
-                                    <h5>{{title}}</h5>
-                                </div>
-                            {{/if}}
-                            {{#if description}}
-                                <div class="body">
-                                    {{{description}}}
-                                </div>
-                            {{/if}}
-                            {{> atoms/button}}
-                        </div>
-                    </div><!--/item-->
+                    {{> molecules/card}}
                 {{/each}}
             </div><!--/items-->
             {{> atoms/button}}

@@ -1,8 +1,9 @@
 p,
 ol,
 ul {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     line-height: 1.4;
+    margin: 1.75rem 0;
 }
 
 h1,
@@ -12,7 +13,7 @@ h4,
 h4 {
     font-weight: normal;
     line-height: 1.2;
-    margin: 1.25rem 0;
+    margin: 1.75rem 0;
 }
 
 h1,

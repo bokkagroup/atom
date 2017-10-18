@@ -1,18 +1,24 @@
 <div class="text molecule">
-    <header>
-        <div class="title">
+    <div class="title">
+        <header>
             {{#if title}}
             <h2>{{title}}</h2>
             {{/if}}
             {{#if subtitle}}
             <h3>{{subtitle}}</h3>
             {{/if}}
-        </div>
-    </header>
+        </header>
+    </div>
     {{#if description}}
     <div class="body">
         {{{description}}}
     </div>
     {{/if}}
+    {{#unless content-columns-3}}
+    {{#unless content-columns-4}}
+    {{#unless cta-w-multimedia}}
     {{> atoms/button}}
+    {{/unless}}
+    {{/unless}}
+    {{/unless}}
 </div><!--/text-->

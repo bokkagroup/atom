@@ -1,13 +1,15 @@
 <div class="molecule card">
+    {{#if image}}{{#if link}}<a href="{{link}}">{{/if}}
     {{> molecules/image}}
+    {{/if}}{{#if link}}</a>{{/if}}
     <div class="text">
         {{#if title}}
         <div class="title">
-            <h2>
+            <h3>
             {{#if link}}<a href="{{link}}">{{/if}}
             {{title}}
             {{#if link}}</a>{{/if}}
-            </h2>
+            </h3>
         </div><!--/title-->
         {{/if}}
         {{#if description}}

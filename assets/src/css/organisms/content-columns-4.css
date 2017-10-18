@@ -1,18 +1,34 @@
-.organism.content-columns-3 {
+.organism.content-columns-4 {
     padding: 3rem 0;
+    text-align: center;
 
     @mixin tablet {
         padding: 8rem 0;
     }
 
-    .item {
+    .container {
+        flex-direction: column;
+    }
+
+    .items {
+        lost-center: 100%;
+        margin: 3rem 0 0;
+    }
+
+    .card {
         margin: 0 2rem 6rem;
         position: relative;
 
         @mixin tablet {
-            @mixin column 1, 4;
-
+            lost-column: 1/4 4;
             margin: 0 0 6rem;
+
+            .image {
+                img {
+                    height: auto;
+                    width: 100%;
+                }
+            }
         }
     }
 }

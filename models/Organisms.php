@@ -64,6 +64,13 @@ class Organisms extends \CatalystWP\MVC\Model
         }
 
         /**
+         * Clear previously set link values for modal buttons
+         */
+        if (isset($organism['button_type']) && $organism['button_type'] === 'modal') {
+            $organism['link'] = false;
+        }
+
+        /**
          * Get Gravity Form object from form ID
          *
          * Use {{{gform}}} within template to render form
@@ -92,17 +99,14 @@ class Organisms extends \CatalystWP\MVC\Model
 
                 // Organism specific modifiers
                 if (isset($organism['type'])) {
-                    if ($organism['type'] === 'cta-w-multimedia') {
+                    if (($organism['type'] === 'cta-w-multimedia') ||
+                        ($organism['type'] === 'thumbnail-grid')) {
                         $image['image']->setSrc('thumbnail');
                     }
 
                     if ($organism['type'] === 'slider-gallery') {
                         $image['image']->setSrc('medium');
                         $image['title'] = null;
-                    }
-
-                    if ($organism['type'] === 'thumbnail-grid') {
-                        $image['image']->setSrc('thumbnail');
                     }
                 }
 
@@ -115,10 +119,23 @@ class Organisms extends \CatalystWP\MVC\Model
          */
         if (!empty($organism['image'])) {
             $organism['image'] = new Image($organism['image']);
+            $organism['image']->setSrc('large');
 
             // Organism specific modifiers
+            if (isset($organism['type'])) {
+                if ($organism['type'] === 'brand-window') {
+                    $organism['image']->setSrc('full');
+                }
+            }
+
             if ($parentType === 'brand-window-slider') {
-                $organism['image']->setSrc('brand-window-slider');
+                $organism['image']->setSrc('large');
+            }
+
+            if (($parentType === 'content-grid-w-thumbnails-2') ||
+                ($parentType === 'content-columns-3') ||
+                ($parentType === 'content-columns-4')) {
+                $organism['image']->setSrc('thumbnail');
             }
         }
 

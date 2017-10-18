@@ -1,13 +1,35 @@
-.organism.content-grid-thumbnails-2 {
+.organism.content-grid-w-thumbnails-2 {
     text-align: center;
 
-    .item {
-        margin: 0 0 3rem;
+    .container {
+        flex-direction: column;
+    }
+
+    .grid {
+        lost-center: 100%;
+        margin: 3rem 0 0;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 3rem;
 
         @mixin tablet {
-            @mixin column 1, 2;
+            lost-column: 1/2 2;
+        }
 
-            margin: 0;
+        .image {
+            lost-column: 1/4;
+        }
+
+        .text {
+            lost-column: 3/4;
+            text-align: left;
+
+            h3 {
+                margin: 0;
+            }
         }
     }
 }

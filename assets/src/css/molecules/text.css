@@ -1,0 +1,11 @@
+.molecule.text {
+    .title {
+        padding: 1px 0; /* prevent margin collapse */
+    }
+
+    p,
+    ol,
+    ul {
+        font-family: $serif;
+    }
+}

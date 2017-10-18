@@ -1,14 +1,11 @@
-import $        from 'jquery';
-import slick    from 'slick-carousel';
+import $            from 'jquery';
+import modals       from './helpers/modals.js';
+import sliders      from './helpers/sliders.js';
 
 $(document).ready(() => {
 
-    /**
-     * Sliders
-     */
-    $('.brand-window-slider .slides').slick({
-        dots: false
-    });
+     sliders();
+     modals();
 
     /**
      * Accordion
@@ -16,4 +13,5 @@ $(document).ready(() => {
     $('.accordion .title').on('click', function (event) {
         $(this).closest('.item').toggleClass('open');
     });
+
 });

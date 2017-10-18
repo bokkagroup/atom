@@ -1,3 +1,19 @@
 .organism.conversion-point-w-modal-form {
-    /* styles */
+    padding: 3rem 0;
+
+    @mixin tablet {
+        padding: 8rem 0;
+    }
+
+    .text {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .title {
+        margin: 0 6rem;
+    }
 }
