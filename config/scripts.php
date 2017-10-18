@@ -56,3 +56,10 @@ add_action('wp_enqueue_scripts', function () {
         wp_enqueue_script('catalystwp-common');
     }
 }, 25);
+
+/* ----------------------------------------------------------------------------------
+Enqueue admin styles
+---------------------------------------------------------------------------------- */
+add_action('admin_enqueue_scripts', function () {
+    wp_enqueue_style('admin-styles', get_template_directory_uri().'/assets/build/css/admin.css');
+});

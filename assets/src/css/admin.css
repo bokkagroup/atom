@@ -1,0 +1,6 @@
+/* Styles loaded in WP dashboard */
+
+.acf-repeater > table > tbody > tr > td,
+.acf-repeater.-row > table > tbody > tr > td {
+    border-top: 3px solid #bbb !important;
+}

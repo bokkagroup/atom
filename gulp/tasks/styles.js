@@ -36,7 +36,7 @@ gulp.task('style-lint', function () {
 
 gulp.task('css', ['style-lint'], function () {
 
-    var SRC = 'assets/src/css/main.css';
+    var SRC = ['assets/src/css/main.css', 'assets/src/css/admin.css'];
     var DEST = 'assets/build/css';
 
     var plugins = [
@@ -49,7 +49,7 @@ gulp.task('css', ['style-lint'], function () {
         require('autoprefixer'),
     ];
 
-    return gulp.src([SRC])
+    return gulp.src(SRC)
         .pipe(sourcemaps.init())
         .pipe(postcss(plugins))
         .pipe(sourcemaps.write('./maps/'))
