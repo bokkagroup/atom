@@ -10,6 +10,9 @@ export default function sliders () {
     // Brand Window Slider
     $('.brand-window-slider .slides').slick();
 
+    // Text slider
+    $('.text-slider .slides').slick();
+
     // Carousel 4-Up
     $('.carousel-4-up .carousel').slick({
         arrows: false,

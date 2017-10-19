@@ -1,12 +1,15 @@
 <div class="organism thumbnail-grid" id="{{id}}">
     <div class="container">
         {{> molecules/text}}
-        <div class="thumbnails">
+        <div class="grid">
             {{#each gallery}}
             <div class="item">
-                {{> molecules/image}}
+                <a href="{{image.sizes.large}}" class="modal" rel="gallery">
+                    {{> molecules/image}}
+                </a>
             </div>
             {{/each}}
         </div>
+        {{> atoms/button}}
     </div><!--/container-->
 </div><!--/thumbnail-grid-->

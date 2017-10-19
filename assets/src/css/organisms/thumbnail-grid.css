@@ -1,15 +1,36 @@
 .organism.thumbnail-grid {
     padding: 3rem 0;
+    text-align: center;
 
     @mixin tablet {
         padding: 8rem 0;
     }
 
-    .item {
-        margin: 0 0 3rem;
+    .container {
+        flex-direction: column;
+    }
+
+    .grid {
+        margin: 2rem 0 0;
 
         @mixin tablet {
-            @mixin column 1, 3;
+            lost-center: 100%;
+        }
+    }
+
+    .item {
+        margin: 0 0 2rem;
+
+        @mixin tablet {
+            lost-column: 1/3 3 2rem;
+        }
+
+        .image {
+            img {
+                height: auto;
+                display: block;
+                width: 100%;
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 .molecule.text {
-    .title {
+    .title,
+    .body {
         padding: 1px 0; /* prevent margin collapse */
     }
 

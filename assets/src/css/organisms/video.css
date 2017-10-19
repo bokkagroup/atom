@@ -5,4 +5,13 @@
     @mixin tablet {
         padding: 8rem 0;
     }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .video-embed {
+        margin: 3rem 0 0;
+        width: 100%;
+    }
 }

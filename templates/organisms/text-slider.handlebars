@@ -1,14 +1,12 @@
 <div class="organism text-slider" id="{{id}}" {{#if background_image}}style="background-image:url('{{background_image.src}}');"{{/if}}>
     <section>
-        <div class="container">
-            {{> molecules/text}}
-            <div class="slider">
-                <ul class="slides">
-                    {{#each item}}
-                        {{> molecules/slide}}
-                    {{/each}}
-                </ul>
-            </div>
-        </div><!--/container -->
+        {{> molecules/text}}
+        <div class="slider">
+            <ul class="slides">
+                {{#each item}}
+                    {{> molecules/slide}}
+                {{/each}}
+            </ul>
+        </div>
     </section>
 </div><!--/text-slider-->

@@ -54,6 +54,7 @@ ORGANISMS
 @import 'organisms/text-w-background-image';
 @import 'organisms/video';
 @import 'organisms/slider';
+@import 'organisms/thumbnail-grid';
 
 /* ----------------------------------------------------------
 LAYOUTS

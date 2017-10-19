@@ -1,3 +1,25 @@
 .organism.text-slider {
+    background-size: cover;
+    padding: 3rem 0;
     text-align: center;
+
+    @mixin tablet {
+        padding: 8rem 0;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .slide {
+        lost-center: 100%;
+
+        @mixin tablet {
+            lost-center: 740px 15px;
+        }
+
+        @mixin desktop {
+            lost-center: 960px;
+        }
+    }
 }

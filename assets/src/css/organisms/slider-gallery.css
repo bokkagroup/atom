@@ -1,3 +1,12 @@
 .organism.slider-gallery {
-    /* styles */
+    padding: 3rem 0;
+    text-align: center;
+
+    @mixin tablet {
+        padding: 8rem 0;
+    }
+
+    .container {
+        flex-direction: column;
+    }
 }

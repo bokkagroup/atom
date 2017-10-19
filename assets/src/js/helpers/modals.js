@@ -9,8 +9,6 @@ var fancybox    = require('fancybox')($);
 
 export default function modals () {
 
-    $('.modal').fancybox({
-        type: 'inline'
-    });
+    $('.modal').fancybox();
 
 }
