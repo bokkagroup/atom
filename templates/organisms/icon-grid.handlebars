@@ -5,16 +5,7 @@
             <div class="grid">
                 {{#each item}}
                 <div class="item">
-                    {{#if link}}
-                    <a href="{{link}}" title="{{title}}">
-                    {{/if}}
-                        <span class="icon">
-                            <i class="fa {{icon}}"></i>
-                        </span>
-                        <p>{{title}}</p>
-                    {{#if link}}
-                    </a>
-                    {{/if}}
+                    {{> atoms/fa-icon}}
                 </div>
                 {{/each}}
             </div>
