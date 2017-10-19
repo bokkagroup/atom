@@ -9,6 +9,11 @@
 var gulp = require('gulp');
 
 gulp.task('copyfonts', function() {
-    gulp.src('./assets/src/fonts/**/*.{ttf,woff,woff2,eof,svg}')
+    var SRC = [
+        './assets/src/fonts/**/*.{ttf,woff,woff2,eof,svg}',
+        './node_modules/font-awesome/fonts/*.{ttf,woff,woff2,eof,svg,eot}'
+    ];
+
+    gulp.src(SRC)
         .pipe(gulp.dest('./assets/build/fonts'));
 });

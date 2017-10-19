@@ -2,15 +2,22 @@
     <section>
         <div class="container">
             {{> molecules/text}}
-            <ul>
-                {{#each gallery}}
-                <li>
-                    <span class="icon">
-                        <img src="{{this.url}}" alt=" ">
-                    </span>
-                </li>
+            <div class="grid">
+                {{#each item}}
+                <div class="item">
+                    {{#if link}}
+                    <a href="{{link}}" title="{{title}}">
+                    {{/if}}
+                        <span class="icon">
+                            <i class="fa {{icon}}"></i>
+                        </span>
+                        <p>{{title}}</p>
+                    {{#if link}}
+                    </a>
+                    {{/if}}
+                </div>
                 {{/each}}
-            </ul>
+            </div>
         </div><!--/container -->
     </section>
 </div><!--/icon-grid-->
