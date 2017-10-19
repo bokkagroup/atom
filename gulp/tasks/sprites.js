@@ -15,7 +15,7 @@ gulp.task('sprites', function (cb) {
 
     // Generate sprite image file and css
     return sprity.src({
-        src: 'assets/src/images/icons/*.{png,jpg}',
+        src: 'assets/src/img/icons/*.{png,jpg}',
         style: './sprite.css',
         prefix: 'sprite',
         dimension: [{
@@ -28,6 +28,6 @@ gulp.task('sprites', function (cb) {
         console.log(err.toString());
         cb();
     })
-    .pipe(gulpif('*.png', gulp.dest('./assets/build/images/'), gulp.dest('./assets/src/css/base/')));
+    .pipe(gulpif('*.png', gulp.dest('./assets/build/img/'), gulp.dest('./assets/src/css/base/')));
 
 });
