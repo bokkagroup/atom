@@ -4,4 +4,18 @@
     @mixin tablet {
         padding: 8rem 0;
     }
+
+    .text {
+        @mixin tablet {
+            lost-column: 1/2;
+        }
+    }
+
+    .map-embed,
+    .video-embed,
+    .photo-gallery {
+        @mixin tablet {
+            lost-column: 1/2;
+        }
+    }
 }

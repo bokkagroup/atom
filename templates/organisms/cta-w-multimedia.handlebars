@@ -6,16 +6,11 @@
                 {{> molecules/photo-gallery}}
             {{/if}}
             {{#if video-embed}}
-            <div class="embed-container">
-                {{{video_embed_code}}}
-            </div>
+                {{> atoms/video-embed}}
             {{/if}}
             {{#if map-embed}}
-            <div class="embed-container">
-                {{{map_embed_code}}}
-            </div>
+                {{> atoms/map-embed}}
             {{/if}}
-            {{> atoms/button}}
         </div><!--/container -->
     </section>
 </div><!--/cta-w-multimedia-->

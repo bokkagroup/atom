@@ -2,7 +2,7 @@
 
 namespace CatalystWP\Theme\models;
 
-use CatalystWP\helpers\Image as Image;
+use CatalystWP\MVC\models\Image as Image;
 
 class Organisms extends \CatalystWP\MVC\Model
 {
@@ -99,8 +99,7 @@ class Organisms extends \CatalystWP\MVC\Model
 
                 // Organism specific modifiers
                 if (isset($organism['type'])) {
-                    if (($organism['type'] === 'cta-w-multimedia') ||
-                        ($organism['type'] === 'thumbnail-grid')) {
+                    if ($organism['type'] === 'thumbnail-grid') {
                         $image['image']->setSrc('thumbnail');
                     }
 

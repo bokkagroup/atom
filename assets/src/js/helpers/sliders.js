@@ -7,11 +7,19 @@ import slick    from 'slick-carousel';
 
 export default function sliders () {
 
+    // Brand Window Slider
     $('.brand-window-slider .slides').slick();
 
+    // Carousel 4-Up
     $('.carousel-4-up .carousel').slick({
-        slidesToShow: 4,
-        slidesToScroll: 4
+        arrows: false,
+        dots: true,
+        slidesToScroll: 4,
+        slidesToShow: 4
     });
 
+    // CTA w/Multimedia
+    $('.cta-w-multimedia .photo-gallery').slick({
+        adaptiveHeight: true
+    });
 }

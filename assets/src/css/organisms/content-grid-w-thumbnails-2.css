@@ -1,5 +1,10 @@
 .organism.content-grid-w-thumbnails-2 {
+    padding: 3rem 2rem;
     text-align: center;
+
+    @mixin tablet {
+        padding: 5rem 0;
+    }
 
     .container {
         flex-direction: column;

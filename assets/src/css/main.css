@@ -28,6 +28,7 @@ MOLECULES
 ----------------------------------------------------------- */
 @import 'molecules/text';
 @import 'molecules/slide';
+@import 'molecules/photo-gallery';
 
 /* ----------------------------------------------------------
 ORGANISMS

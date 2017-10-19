@@ -18,4 +18,29 @@
     .slick-next {
         right: 0;
     }
+
+    .slick-dots {
+        @mixin list-reset;
+
+        margin: 3rem auto 0;
+        text-align: center;
+
+        li {
+            display: inline-block;
+            margin: 0 5px;
+
+            button {
+                background-color: $white;
+                border: 3px solid $gray;
+                color: $gray;
+            }
+
+            &.slick-active {
+                button {
+                    background-color: $gray;
+                    color: $white;
+                }
+            }
+        }
+    }
 }

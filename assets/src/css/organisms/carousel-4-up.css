@@ -4,29 +4,29 @@
 
     @mixin tablet {
         padding: 5rem 0;
-
-        .card {
-            lost-column: 1/4 0 15px;
-        }
-
-        .slick-prev {
-            left: -200px;
-        }
-
-        .slick-next {
-            right: -200px;
-        }
     }
 
     .carousel {
-        lost-center: 100%;
+        @mixin tablet {
+            lost-center: 100%;
+        }
     }
 
     .slick-list {
-        margin: 0 -15px;
+        @mixin tablet {
+            margin: 0 -15px;
+        }
+    }
+
+    .card {
+        @mixin tablet {
+            lost-column: 1/4 0 15px;
+        }
     }
 
     .slick-slide {
-        margin: 0 15px;
+        @mixin tablet {
+            margin: 0 15px;
+        }
     }
 }

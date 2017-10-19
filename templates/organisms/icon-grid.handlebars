@@ -6,6 +6,13 @@
                 {{#each item}}
                 <div class="item">
                     {{> atoms/fa-icon}}
+                    {{#if link}}
+                    <a href="{{link}}" title="{{title}}">
+                    {{/if}}
+                        <h3>{{title}}</h3>
+                    {{#if link}}
+                    </a>
+                    {{/if}}
                 </div>
                 {{/each}}
             </div>
