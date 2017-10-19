@@ -1,3 +1,7 @@
 .organism.on-page-form {
-    /* styles */
+    padding: 3rem 0;
+
+    @mixin tablet {
+        padding: 8rem 0;
+    }
 }

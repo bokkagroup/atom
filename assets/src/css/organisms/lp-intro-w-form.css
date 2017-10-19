@@ -1,3 +1,19 @@
 .organism.lp-intro-w-form {
-    /* styles */
+    padding: 3rem 0;
+
+    @mixin tablet {
+        padding: 8rem 0;
+    }
+
+    .container > .text {
+        @mixin tablet {
+            lost-column: 4/6;
+        }
+    }
+
+    .form {
+        @mixin tablet {
+            lost-column: 2/6;
+        }
+    }
 }
