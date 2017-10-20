@@ -27,8 +27,8 @@
 
         .image {
             img {
-                height: auto;
                 display: block;
+                height: auto;
                 width: 100%;
             }
         }

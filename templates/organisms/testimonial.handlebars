@@ -1,6 +1,15 @@
 <div class="organism testimonial" id="{{id}}">
     <section>
         <div class="container">
+            {{> molecules/text}}
+            <div class="slider">
+                <ul class="slides">
+                    {{#each item}}
+                    {{> molecules/slide}}
+                    {{/each}}
+                </ul>
+            </div>
+            {{> atoms/button}}
         </div><!--/container -->
     </section>
 </div><!--/testimonial-->

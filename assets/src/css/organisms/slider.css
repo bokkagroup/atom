@@ -5,9 +5,9 @@
     position: relative;
 
     .slick-arrow {
+        margin-top: -18px;
         position: absolute;
         top: 50%;
-        margin-top: -18px;
         transform: translateY(-50%);
         z-index: 1;
     }
@@ -23,7 +23,7 @@
     .slick-dots {
         @mixin list-reset;
 
-        margin: 3rem auto 0;
+        margin: 2rem auto;
         text-align: center;
 
         li {

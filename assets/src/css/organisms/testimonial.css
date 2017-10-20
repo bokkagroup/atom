@@ -1,3 +1,60 @@
 .organism.testimonial {
-    /* styles */
+    padding: 3rem 2rem;
+    text-align: center;
+
+    @mixin tablet {
+        padding: 5rem 0;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .slides {
+        @mixin list-reset;
+    }
+
+    .content {
+        text-align: left;
+        padding: 2rem 0;
+
+        @mixin tablet {
+            lost-center: 100%;
+        }
+
+        h2 {
+            margin: 0;
+        }
+
+        h3 {
+            margin-bottom: 0;
+        }
+    }
+
+    .content > .image {
+        @mixin tablet {
+            lost-column: 1/6;
+        }
+
+        figure {
+            border-radius: 50%;
+            height: auto;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+            height: auto;
+            width: 100%;
+        }
+    }
+
+    .content > .text {
+        @mixin tablet {
+            lost-column: 5/6;
+        }
+    }
 }

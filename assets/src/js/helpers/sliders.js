@@ -25,4 +25,10 @@ export default function sliders () {
     $('.cta-w-multimedia .photo-gallery, .slider-gallery .photo-gallery').slick({
         adaptiveHeight: true
     });
+
+    $('.testimonial .slides').slick({
+        adaptiveHeight: true,
+        arrows: false,
+        dots: true
+    });
 }
