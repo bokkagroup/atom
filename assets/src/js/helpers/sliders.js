@@ -21,8 +21,8 @@ export default function sliders () {
         slidesToShow: 4
     });
 
-    // CTA w/Multimedia
-    $('.cta-w-multimedia .photo-gallery').slick({
+    // CTA w/Multimedia & Slider gallery
+    $('.cta-w-multimedia .photo-gallery, .slider-gallery .photo-gallery').slick({
         adaptiveHeight: true
     });
 }

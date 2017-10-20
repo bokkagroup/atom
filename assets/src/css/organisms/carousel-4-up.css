@@ -7,6 +7,8 @@
     }
 
     .carousel {
+        margin: 3rem 0 0;
+
         @mixin tablet {
             lost-center: 100%;
         }

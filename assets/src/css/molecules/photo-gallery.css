@@ -1,3 +1,10 @@
 .molecule.photo-gallery {
-    /* styles */
+    .slick-slide {
+        .image {
+            img {
+                height: auto;
+                width: 100%;
+            }
+        }
+    }
 }

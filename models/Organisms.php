@@ -104,7 +104,7 @@ class Organisms extends \CatalystWP\MVC\Model
                     }
 
                     if ($organism['type'] === 'slider-gallery') {
-                        $image['image']->setSrc('medium');
+                        $image['image']->setSrc('large');
                         $image['title'] = null;
                     }
                 }

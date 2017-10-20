@@ -22,6 +22,7 @@ ATOMS
 @import 'atoms/button';
 @import 'atoms/embed';
 @import 'atoms/text';
+@import 'atoms/video-embed';
 
 /* ----------------------------------------------------------
 MOLECULES
