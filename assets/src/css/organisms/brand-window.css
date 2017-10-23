@@ -25,6 +25,8 @@
     }
 
     .text {
+        padding: 0 3rem;
+
         @mixin tablet {
             align-items: center;
             display: flex;
@@ -32,7 +34,6 @@
             height: 100%;
             justify-content: center;
             left: 0;
-            padding: 0 30px;
             position: absolute;
             right: 0;
             text-align: center;

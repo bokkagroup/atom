@@ -21,5 +21,9 @@
         @mixin desktop {
             lost-center: 960px;
         }
+
+        .content {
+            padding: 0 5rem;
+        }
     }
 }

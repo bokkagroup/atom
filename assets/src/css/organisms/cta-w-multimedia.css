@@ -5,9 +5,20 @@
         padding: 8rem 0;
     }
 
+    .container {
+        flex-direction: column;
+
+        @mixin tablet {
+            flex-direction: row;
+        }
+    }
+
     .text {
+        margin-bottom: 3rem;
+
         @mixin tablet {
             lost-column: 1/2;
+            margin-bottom: 0;
         }
     }
 

@@ -6,6 +6,10 @@
         padding: 5rem 0;
     }
 
+    .container {
+        flex-direction: column;
+    }
+
     .carousel {
         margin: 3rem 0 0;
 
@@ -21,6 +25,8 @@
     }
 
     .card {
+        width: 100%;
+
         @mixin tablet {
             lost-column: 1/4 0 15px;
         }

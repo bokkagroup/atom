@@ -4,8 +4,12 @@
 
     @mixin tablet {
         padding: 8rem 0;
+    }
 
-        .card {
+    .card {
+        margin-bottom: 3rem;
+
+        @mixin tablet {
             lost-column: 1/2 0;
         }
     }

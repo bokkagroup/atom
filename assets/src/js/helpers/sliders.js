@@ -17,8 +17,23 @@ export default function sliders () {
     $('.carousel-4-up .carousel').slick({
         arrows: false,
         dots: true,
-        slidesToScroll: 4,
-        slidesToShow: 4
+        mobileFirst: true,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToScroll: 2,
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToScroll: 4,
+                    slidesToShow: 4,
+                }
+            }
+        ]
     });
 
     // CTA w/Multimedia & Slider gallery
