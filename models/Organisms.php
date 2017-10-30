@@ -18,6 +18,10 @@ class Organisms extends \CatalystWP\MVC\Model
      */
     public function initialize($id)
     {
+        if (!function_exists('get_field')) {
+            return;
+        }
+
         $post_id = isset($id) ? $id : get_the_ID();
         $organisms = get_field('organism', $post_id);
 
