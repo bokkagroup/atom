@@ -35,13 +35,11 @@
                 border: 3px solid $gray;
                 color: $gray;
             }
+        }
 
-            &.slick-active {
-                button {
-                    background-color: $gray;
-                    color: $white;
-                }
-            }
+        .slick-active button {
+            background-color: $gray;
+            color: $white;
         }
     }
 }

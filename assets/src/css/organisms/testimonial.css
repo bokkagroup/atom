@@ -15,8 +15,8 @@
     }
 
     .content {
-        text-align: left;
         padding: 2rem 0;
+        text-align: left;
 
         @mixin tablet {
             lost-center: 100%;
@@ -46,8 +46,8 @@
 
         img {
             display: block;
-            margin: 0 auto;
             height: auto;
+            margin: 0 auto;
             width: 100%;
         }
     }
