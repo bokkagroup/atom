@@ -83,6 +83,19 @@ class Organisms extends \CatalystWP\MVC\Model
         }
 
         /**
+         * Set organism columns class from column_count option
+         */
+        if (!empty($organism['column_count']) && !is_array($organism['column_count'])) {
+            if ($organism['column_count'] === 'two') {
+                $organism['column_class'] = 'col-2';
+            } elseif ($organism['column_count'] === 'three') {
+                $organism['column_class'] = 'col-3';
+            } elseif ($organism['column_count'] === 'four') {
+                $organism['column_class'] = 'col-4';
+            }
+        }
+
+        /**
          * Set organism media_type property equal to true
          * for use in handlebars templates
          */

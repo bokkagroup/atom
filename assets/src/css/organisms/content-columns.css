@@ -1,4 +1,4 @@
-.organism.content-columns-4 {
+.organism.content-columns {
     padding: 3rem 0;
     text-align: center;
 
@@ -20,9 +20,6 @@
         position: relative;
 
         @mixin tablet {
-            lost-column: 1/4 4;
-            margin: 0 0 6rem;
-
             .image {
                 img {
                     height: auto;

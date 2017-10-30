@@ -19,3 +19,35 @@ GRID
         lost-center: 1160px 15px;
     }
 }
+
+.organism {
+    &.col-2 {
+        .card,
+        .item {
+            @mixin tablet {
+                lost-column: 1/2 2;
+                margin: 0 0 6rem;
+            }
+        }
+    }
+
+    &.col-3 {
+        .card,
+        .item {
+            @mixin tablet {
+                lost-column: 1/3 3;
+                margin: 0 0 6rem;
+            }
+        }
+    }
+
+    &.col-4 {
+        .card,
+        .item {
+            @mixin tablet {
+                lost-column: 1/4 4;
+                margin: 0 0 6rem;
+            }
+        }
+    }
+}

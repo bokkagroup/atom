@@ -42,8 +42,7 @@ ORGANISMS
 @import 'organisms/brand-window-slider';
 @import 'organisms/cards';
 @import 'organisms/carousel-4-up';
-@import 'organisms/content-columns-3';
-@import 'organisms/content-columns-4';
+@import 'organisms/content-columns';
 @import 'organisms/content-grid-w-thumbnails-2';
 @import 'organisms/conversion-point-w-modal-form';
 @import 'organisms/cta-w-multimedia';

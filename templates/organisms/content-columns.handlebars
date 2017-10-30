@@ -1,0 +1,13 @@
+<div class="organism content-columns {{#if column_class}}{{column_class}}{{/if}}" id="{{id}}">
+    <section>
+        <div class="container">
+            {{> molecules/text}}
+            <div class="items">
+                {{#each item}}
+                    {{> molecules/card}}
+                {{/each}}
+            </div><!--/items-->
+            {{> atoms/button}}
+        </div><!--/container-->
+    </section>
+</div><!--/content-columns-4-->
