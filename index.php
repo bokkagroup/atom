@@ -4,6 +4,7 @@ use CatalystWP\Theme\controllers\OrganismsController;
 
 //Determine which controller to use
 if (is_front_page()) {
+    new OrganismsController();
 } elseif (is_post_type_archive()) {
 } elseif (is_tax()) {
 } elseif (is_archive()) {
