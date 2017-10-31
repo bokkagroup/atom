@@ -179,7 +179,7 @@ class Organisms extends \CatalystWP\MVC\Model
      * @param  string $parentType Parent organism type
      * @return array              Array of child fields run through mapData
      */
-    public function mapItemData(array $items, string $parentType)
+    public function mapItemData($items, $parentType)
     {
         return array_map(function ($item) use ($parentType) {
             return $this->mapData($item, $parentType);
