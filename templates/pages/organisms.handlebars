@@ -1,3 +1,4 @@
+{{> organisms/header}}
 {{#each organisms}}
     {{#if accordion}}
         {{> organisms/accordion}}
@@ -22,12 +23,6 @@
     {{/if}}
     {{#if content-columns}}
         {{> organisms/content-columns}}
-    {{/if}}
-    {{#if content-columns-3}}
-        {{> organisms/content-columns-3}}
-    {{/if}}
-    {{#if content-columns-4}}
-        {{> organisms/content-columns-4}}
     {{/if}}
     {{#if conversion-point-w-modal-form}}
         {{> organisms/conversion-point-w-modal-form}}
@@ -66,3 +61,4 @@
         {{> organisms/video}}
     {{/if}}
 {{/each}}
+{{>organisms/footer}}

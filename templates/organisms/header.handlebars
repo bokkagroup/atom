@@ -1,4 +1,15 @@
-<div class="organism header" id="header">
-    <div class="container">
-    </div><!--/container-->
-</div><!--/header-->
+{{#if header}}
+    {{#with header}}
+    <div class="organism header" id="header">
+        <div class="container">
+            <div class="brand">
+                <figure>
+                    <a href="/"><img src="{{logo}}" alt=" "></a>
+                </figure>
+            </div>
+            <a href="#" class="menu-toggle">Menu</a>
+            {{> molecules/menu}}
+        </div><!--/container-->
+    </div><!--/header-->
+    {{/with}}
+{{/if}}

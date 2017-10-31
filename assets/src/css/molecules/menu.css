@@ -1,0 +1,16 @@
+.menu {
+    width: auto;
+
+    ul {
+        @mixin list-reset;
+    }
+
+    li {
+        display: inline-block;
+        margin: 0 0.5rem;
+    }
+
+    .submenu {
+        display: none;
+    }
+}

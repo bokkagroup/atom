@@ -1,0 +1,24 @@
+{{#if menu}}
+    {{#with menu}}
+    <div class="menu molecule">
+        <div class="nav">
+            <ul>
+                {{#each links}}
+                <li>
+                    {{> atoms/menu-item}}
+                    {{#if parent}}
+                    <ul class="submenu">
+                        {{#each child_menu}}
+                        <li>
+                            {{> atoms/menu-item}}
+                        </li>
+                        {{/each}}
+                    </ul>
+                    {{/if}}
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+    {{/with}}
+{{/if}}

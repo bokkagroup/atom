@@ -1,4 +1,10 @@
-<div class="organism footer" id="footer">
-    <div class="container">
-    </div><!--/container-->
-</div><!--/footer-->
+{{#if footer}}
+    {{#with footer}}
+    <div class="organism footer" id="footer">
+        <div class="container">
+            <p>&copy; {{year}} Bokka Group</p>
+            {{> molecules/menu}}
+        </div><!--/container-->
+    </div><!--/footer-->
+    {{/with}}
+{{/if}}

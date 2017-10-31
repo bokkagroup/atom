@@ -30,6 +30,10 @@ class Organisms extends \CatalystWP\MVC\Model
         } else {
             $this->data = array();
         }
+
+        //set header & footer data
+        $this->data['header'] = new Header();
+        $this->data['footer'] = new Footer();
     }
 
     /**

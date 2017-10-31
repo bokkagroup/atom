@@ -29,6 +29,7 @@ ATOMS
 /* ----------------------------------------------------------
 MOLECULES
 ----------------------------------------------------------- */
+@import 'molecules/menu';
 @import 'molecules/text';
 @import 'molecules/slide';
 @import 'molecules/photo-gallery';
@@ -36,6 +37,8 @@ MOLECULES
 /* ----------------------------------------------------------
 ORGANISMS
 ----------------------------------------------------------- */
+@import 'organisms/header';
+@import 'organisms/footer';
 @import 'organisms/accordion';
 @import 'organisms/basic-content-block';
 @import 'organisms/brand-window';

@@ -1,0 +1,25 @@
+.organism.header {
+    border-bottom: 1px solid $gray;
+    padding: 3rem 0;
+
+    .container {
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .brand {
+        width: 120px;
+
+        img {
+            display: block;
+            height: auto;
+            max-width: 100%;
+        }
+    }
+
+    .menu-toggle {
+        @mixin tablet {
+            display: none;
+        }
+    }
+}
