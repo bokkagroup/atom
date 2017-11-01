@@ -18,13 +18,13 @@
     .card {
         margin: 0 2rem 6rem;
         position: relative;
+    }
 
+    .card .image {
         @mixin tablet {
-            .image {
-                img {
-                    height: auto;
-                    width: 100%;
-                }
+            img {
+                height: auto;
+                width: 100%;
             }
         }
     }

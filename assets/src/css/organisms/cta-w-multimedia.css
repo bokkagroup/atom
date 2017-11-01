@@ -17,7 +17,8 @@
         margin-bottom: 3rem;
 
         @mixin tablet {
-            lost-column: 1/2;
+            @mixin column 1, 2;
+
             margin-bottom: 0;
         }
     }
@@ -26,7 +27,7 @@
     .video-embed,
     .photo-gallery {
         @mixin tablet {
-            lost-column: 1/2;
+            @mixin column 1, 2;
         }
     }
 }

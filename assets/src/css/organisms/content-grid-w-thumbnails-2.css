@@ -21,15 +21,16 @@
         margin-bottom: 3rem;
 
         @mixin tablet {
-            lost-column: 1/2 2;
+            @mixin column 1, 2, 2;
         }
 
         .image {
-            lost-column: 1/4;
+            @mixin column 1, 4;
         }
 
         .text {
-            lost-column: 3/4;
+            @mixin column 3, 4;
+
             text-align: left;
 
             h3 {

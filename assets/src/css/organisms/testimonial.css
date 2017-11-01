@@ -33,7 +33,7 @@
 
     .content > .image {
         @mixin tablet {
-            lost-column: 1/6;
+            @mixin column 1, 6;
         }
 
         figure {
@@ -54,7 +54,7 @@
 
     .content > .text {
         @mixin tablet {
-            lost-column: 5/6;
+            @mixin column 5, 6;
         }
     }
 }

@@ -7,13 +7,13 @@
 
     .container > .text {
         @mixin tablet {
-            lost-column: 4/6;
+            @mixin column 4, 6;
         }
     }
 
     .form {
         @mixin tablet {
-            lost-column: 2/6;
+            @mixin column 2, 6;
         }
     }
 }

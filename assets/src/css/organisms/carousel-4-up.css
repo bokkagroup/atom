@@ -28,7 +28,7 @@
         width: 100%;
 
         @mixin tablet {
-            lost-column: 1/4 0 15px;
+            @mixin column 1, 4, 0, 15px;
         }
     }
 

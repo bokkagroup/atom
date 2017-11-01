@@ -1,7 +1,7 @@
 /* ----------------------------------------------------------
 LOST GRID MIXINS
 ----------------------------------------------------------- */
-@define-mixin column $numerator, $denominator, $gutter: '', $cycle: '' {
+@define-mixin column $numerator, $denominator, $cycle: '', $gutter: '' {
     lost-column: $(numerator)/$(denominator) $(cycle) $(gutter);
 }
 

@@ -22,7 +22,7 @@
         margin: 0 0 2rem;
 
         @mixin tablet {
-            lost-column: 1/3 3 2rem;
+            @mixin column 1, 3, 3, 2rem;
         }
 
         .image {

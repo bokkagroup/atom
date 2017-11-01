@@ -10,7 +10,7 @@
         margin-bottom: 3rem;
 
         @mixin tablet {
-            lost-column: 1/2 0;
+            @mixin column 1, 2;
         }
     }
 }
