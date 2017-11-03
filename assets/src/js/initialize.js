@@ -1,11 +1,13 @@
 import $            from 'jquery';
+import tabs         from './helpers/tabs.js';
 import modals       from './helpers/modals.js';
 import sliders      from './helpers/sliders.js';
 
 $(document).ready(() => {
 
-     sliders();
-     modals();
+    sliders();
+    modals();
+    tabs();
 
     /**
      * Accordion

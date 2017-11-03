@@ -79,6 +79,13 @@ class Organisms extends \CatalystWP\MVC\Model
         }
 
         /**
+         * Prepare tabbed content
+         */
+        if (isset($organism['tabbed-content']) && $organism['tabbed-content'] && !empty($organism['item'])) {
+            $organism['tabs'] = new TabContent($organism['item']);
+        }
+
+        /**
          * Get Gravity Form object from form ID
          *
          * Use {{{gform}}} within template to render form
@@ -159,6 +166,9 @@ class Organisms extends \CatalystWP\MVC\Model
             }
         }
 
+        /**
+         * Get background image object
+         */
         if (!empty($organism['background_image'])) {
             $organism['background_image'] = new Image($organism['background_image']);
         }

@@ -1,0 +1,24 @@
+<div class="organism tabbed-content" id="{{id}}">
+    <section>
+        <div class="container">
+            {{#if tabs}}
+            <div class="tabs">
+                {{#with tabs}}
+                <ul class="tab-labels">
+                    {{#each tabs}}
+                    <li><a href="{{slug}}">{{label}}</a></li>
+                    {{/each}}
+                </ul>
+                <div class="tab-content">
+                    {{#each items}}
+                    <div id="{{id}}">
+                        {{> molecules/text}}
+                    </div>
+                    {{/each}}
+                </div>
+                {{/with}}
+            </div>
+            {{/if}}
+        </div><!--/container -->
+    </section>
+</div><!--/cta-w-multimedia-->
