@@ -6,6 +6,6 @@ import Tabs         from '../organisms/tabs.js';
 
 export default function tabs() {
 
-    let tabContent = new Tabs('.tabbed-content .tabs');
+    let tabContent = new Tabs('.tabbed-content .tab-wrapper');
 
 }

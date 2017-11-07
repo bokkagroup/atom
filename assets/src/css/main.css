@@ -54,6 +54,7 @@ ORGANISMS
 @import 'organisms/lp-intro-w-form';
 @import 'organisms/on-page-form';
 @import 'organisms/slider-gallery';
+@import 'organisms/tabbed-content';
 @import 'organisms/testimonial';
 @import 'organisms/text-slider';
 @import 'organisms/text-w-background-image';

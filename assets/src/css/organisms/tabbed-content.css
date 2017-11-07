@@ -1,0 +1,36 @@
+.organism.tabbed-content {
+    .tabs {
+        width: 100%;
+    }
+
+    ul {
+        @mixin list-reset;
+
+        border-bottom: 1px solid $gray;
+
+        li {
+            display: inline-block;
+            margin-bottom: -1px;
+
+            a {
+                border: 1px solid $gray;
+                display: block;
+                padding: 1rem 3rem;
+            }
+        }
+
+        .active {
+            a {
+                border-bottom-color: #fff;
+            }
+        }
+    }
+
+    .tab-wrapper > div {
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+}

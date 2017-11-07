@@ -2,20 +2,20 @@
     <section>
         <div class="container">
             {{#if tabs}}
-            <div class="tabs">
+            <div class="tab-wrapper">
                 {{#with tabs}}
-                <ul class="tab-labels">
+                <ul>
                     {{#each tabs}}
-                    <li><a href="{{slug}}">{{label}}</a></li>
+                    <li>
+                        <a href="{{slug}}">{{label}}</a>
+                    </li>
                     {{/each}}
                 </ul>
-                <div class="tab-content">
-                    {{#each items}}
-                    <div id="{{id}}">
-                        {{> molecules/text}}
-                    </div>
-                    {{/each}}
+                {{#each items}}
+                <div id="{{id}}">
+                    {{> molecules/text}}
                 </div>
+                {{/each}}
                 {{/with}}
             </div>
             {{/if}}
