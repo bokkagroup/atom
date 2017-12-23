@@ -2,7 +2,7 @@
 
 namespace CatalystWP\Theme\models;
 
-class TabContent extends \CatalystWP\MVC\Model
+class TabContent extends \CatalystWP\Nucleus\Model
 {
     /**
      * Tab content

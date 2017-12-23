@@ -2,9 +2,9 @@
 
 namespace CatalystWP\Theme\models;
 
-use CatalystWP\MVC\models\Menu as Menu;
+use CatalystWP\Nucleus\models\Menu as Menu;
 
-class Footer extends \CatalystWP\MVC\Model
+class Footer extends \CatalystWP\Nucleus\Model
 {
     public function initialize()
     {

@@ -2,9 +2,9 @@
 
 namespace CatalystWP\Theme\models;
 
-use CatalystWP\MVC\models\Image as Image;
+use CatalystWP\Nucleus\models\Image as Image;
 
-class Organisms extends \CatalystWP\MVC\Model
+class Organisms extends \CatalystWP\Nucleus\Model
 {
     /**
      * Keep track of organisms on page for unique ID attributes
