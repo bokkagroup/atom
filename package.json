@@ -1,5 +1,5 @@
 {
-  "name": "catalyst-wp-theme",
+  "name": "atom",
   "version": "0.0.1",
   "description": "Wordpress parent theme for the Bokka Catalyst Suite of Wordpress tools",
   "main": "webpack.config.js",
