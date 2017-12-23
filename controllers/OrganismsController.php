@@ -2,7 +2,7 @@
 
 namespace CatalystWP\Theme\controllers;
 
-class OrganismsController extends \CatalystWP\MVC\Controller
+class OrganismsController extends \CatalystWP\Nucleus\Controller
 {
     public function initialize()
     {
