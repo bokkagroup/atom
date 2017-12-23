@@ -1,6 +1,6 @@
 <?php
 
-namespace CatalystWP\Theme\views;
+namespace CatalystWP\Atom\views;
 
 class OrganismsView extends \CatalystWP\Nucleus\View
 {
