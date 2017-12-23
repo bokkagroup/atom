@@ -9,6 +9,13 @@
             "email": "mike@bokkagroup.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "CatalystWP\\Theme\\models\\" : "models/",
+            "CatalystWP\\Theme\\controllers\\" : "controllers/",
+            "CatalystWP\\Theme\\views\\" : "views/"
+        }
+    },
     "require": {
         "composer/installers": "~1.0"
     }
