@@ -1,6 +1,6 @@
 <?php
 
-namespace CatalystWP\Theme\controllers;
+namespace CatalystWP\Atom\controllers;
 
 class OrganismsController extends \CatalystWP\Nucleus\Controller
 {

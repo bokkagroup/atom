@@ -1,6 +1,6 @@
 <?php
 
-use CatalystWP\Theme\controllers\OrganismsController;
+use CatalystWP\Atom\controllers\OrganismsController;
 
 //Determine which controller to use
 if (is_front_page()) {
