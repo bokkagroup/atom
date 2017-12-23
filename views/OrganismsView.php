@@ -2,7 +2,7 @@
 
 namespace CatalystWP\Theme\views;
 
-class OrganismsView extends \CatalystWP\MVC\View
+class OrganismsView extends \CatalystWP\Nucleus\View
 {
     public function initialize()
     {
