@@ -11,9 +11,9 @@
     ],
     "autoload": {
         "psr-4": {
-            "CatalystWP\\Theme\\models\\" : "models/",
-            "CatalystWP\\Theme\\controllers\\" : "controllers/",
-            "CatalystWP\\Theme\\views\\" : "views/"
+            "CatalystWP\\Atom\\models\\" : "models/",
+            "CatalystWP\\Atom\\controllers\\" : "controllers/",
+            "CatalystWP\\Atom\\views\\" : "views/"
         }
     },
     "require": {

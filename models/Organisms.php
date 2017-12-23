@@ -1,6 +1,6 @@
 <?php
 
-namespace CatalystWP\Theme\models;
+namespace CatalystWP\Atom\models;
 
 use CatalystWP\Nucleus\models\Image as Image;
 
@@ -32,8 +32,8 @@ class Organisms extends \CatalystWP\Nucleus\Model
         }
 
         //set header & footer data
-        $this->data['header'] = new Header();
-        $this->data['footer'] = new Footer();
+        $this->data['header'] = new organisms\Header();
+        $this->data['footer'] = new organisms\Footer();
     }
 
     /**
@@ -82,7 +82,7 @@ class Organisms extends \CatalystWP\Nucleus\Model
          * Prepare tabbed content
          */
         if (isset($organism['tabbed-content']) && $organism['tabbed-content'] && !empty($organism['item'])) {
-            $organism['tabs'] = new TabContent($organism['item']);
+            $organism['tabs'] = new organisms\TabContent($organism['item']);
         }
 
         /**

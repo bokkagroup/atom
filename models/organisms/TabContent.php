@@ -1,6 +1,6 @@
 <?php
 
-namespace CatalystWP\Theme\models;
+namespace CatalystWP\Atom\models\organisms;
 
 class TabContent extends \CatalystWP\Nucleus\Model
 {
