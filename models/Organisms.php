@@ -91,6 +91,12 @@ class Organisms extends \CatalystWP\Nucleus\Model
          * Use {{{gform}}} within template to render form
          */
         if (!empty($organism['form'])) {
+
+            //support for newer version of gravity form ACF field plugin
+            if (is_array($organism['form_id']) && isset($organism['form_id']['id'])) {
+                $organism['form_id'] = $organism['form_id']['id'];
+            }
+
             if (!empty($organism['form_id']) && function_exists('gravity_form')) {
                 $form = gravity_form($organism['form_id'], false, false, false, null, $ajax = true, 0, false);
                 $organism['gform'] = $form;
