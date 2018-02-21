@@ -17,14 +17,14 @@ add_action('wp_enqueue_scripts', function () {
 
         wp_register_script(
             'catalystwp-initialize',
-            get_template_directory_uri() . '/assets/build/js/initialize.min.js',
+            get_stylesheet_directory_uri() . '/assets/build/js/initialize.min.js',
             array('catalystwp-common'),
             null,
             true
         );
         wp_register_style(
             'catalystwp-styles',
-            get_template_directory_uri() . '/assets/build/css/main.css'
+            get_stylesheet_directory_uri() . '/assets/build/css/main.css'
         );
     } // End if !is_admin()
 }, 5);
@@ -61,5 +61,5 @@ add_action('wp_enqueue_scripts', function () {
 Enqueue admin styles
 ---------------------------------------------------------------------------------- */
 add_action('admin_enqueue_scripts', function () {
-    wp_enqueue_style('admin-styles', get_template_directory_uri().'/assets/build/css/admin.css');
+    wp_enqueue_style('admin-styles', get_stylesheet_directory_uri().'/assets/build/css/admin.css');
 });

@@ -61,10 +61,10 @@ add_action(
 
         //auto load scripts
         //change to get_stylesheet_directory for child theme
-        foreach (glob(get_template_directory() . "/config/*.php") as $filename) {
+        foreach (glob( __DIR__ . "/config/*.php") as $filename) {
             require_once($filename);
         }
-        foreach (glob(get_template_directory() . "/hooks/*.php") as $filename) {
+        foreach (glob( __DIR__ . "/hooks/*.php") as $filename) {
             require_once($filename);
         }
 
@@ -74,4 +74,5 @@ add_action(
     },
     1
 );
+
 remove_filter('template_redirect', 'redirect_canonical');
