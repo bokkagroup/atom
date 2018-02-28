@@ -6,7 +6,9 @@
 
  */
 
-var gulp = require('gulp');
+var gulp            = require('gulp');
+var plumber         = require('gulp-plumber')
+var notify          = require('gulp-notify')
 
 gulp.task('copyfonts', function() {
     var SRC = [
@@ -15,5 +17,8 @@ gulp.task('copyfonts', function() {
     ];
 
     gulp.src(SRC)
+        .pipe(plumber({
+            errorHandler: notify.onError("Error: <%= error.message %>")
+        }))
         .pipe(gulp.dest('./assets/build/fonts'));
 });

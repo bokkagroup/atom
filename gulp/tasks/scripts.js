@@ -12,6 +12,8 @@ var webpack         = require('webpack');
 var webpack         = require('webpack-stream');
 var webpackConfig   = require('../../webpack.config.js');
 var livereload      = require('gulp-livereload');
+var plumber         = require('gulp-plumber')
+var notify          = require('gulp-notify')
 
 const SRC = [
     '../../assets/src/js/initialize.js',
@@ -26,7 +28,10 @@ gulp.task('build-webpack', [], function () {
 
     webpackConfig.watch = false;
 
-    return gulp.src(SRC)
+    gulp.src(SRC)
+        .pipe(plumber({
+            errorHandler: notify.onError("JavaScript Error: <%= error.message %>")
+        }))
         .pipe(webpack(webpackConfig))
         .pipe(gulp.dest(DEST))
         .pipe(livereload());
@@ -37,7 +42,10 @@ gulp.task('watch-webpack', [], function () {
 
     webpackConfig.watch = true;
 
-    return gulp.src(SRC)
+    gulp.src(SRC)
+        .pipe(plumber({
+            errorHandler: notify.onError("JavaScript Error: <%= error.message %>")
+        }))
         .pipe(webpack(webpackConfig))
         .pipe(gulp.dest(DEST))
         .pipe(livereload());
