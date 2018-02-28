@@ -20,6 +20,7 @@ add_action(
 
         include_once 'config.php';
         include_once 'admin/global.php';
+        include_once 'admin/options.php';
 
         if (is_user_logged_in()) {
             update_user_option_admin_color();
@@ -61,10 +62,10 @@ add_action(
 
         //auto load scripts
         //change to get_stylesheet_directory for child theme
-        foreach (glob( __DIR__ . "/config/*.php") as $filename) {
+        foreach (glob(__DIR__ . "/config/*.php") as $filename) {
             require_once($filename);
         }
-        foreach (glob( __DIR__ . "/hooks/*.php") as $filename) {
+        foreach (glob(__DIR__ . "/hooks/*.php") as $filename) {
             require_once($filename);
         }
 
