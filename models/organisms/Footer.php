@@ -3,6 +3,7 @@
 namespace CatalystWP\Atom\models\organisms;
 
 use CatalystWP\Nucleus\models\Menu as Menu;
+use CatalystWP\Atom\models\Options as Options;
 
 class Footer extends \CatalystWP\Nucleus\Model
 {
@@ -10,5 +11,6 @@ class Footer extends \CatalystWP\Nucleus\Model
     {
         $this->menu = new Menu('primary');
         $this->year = date('Y');
+        $this->options = Options::setOptions();
     }
 }

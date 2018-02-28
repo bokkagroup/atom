@@ -20,6 +20,7 @@ add_action(
 
         include_once 'config.php';
         include_once 'admin/global.php';
+        include_once 'admin/options.php';
 
         if (is_user_logged_in()) {
             update_user_option_admin_color();

@@ -2,8 +2,16 @@
     {{#with footer}}
     <div class="organism footer" id="footer">
         <div class="container">
-            <p>&copy; {{year}} Bokka Group</p>
+            <p>&copy; {{year}} {{options.company_name}}</p>
             {{> molecules/menu}}
+
+            {{#if options.social_media_links}}
+                <div class="social">
+                    {{#each options.social_media_links}}
+                        {{> atoms/fa-icon}}
+                    {{/each}}
+                </div>
+            {{/if}}
         </div><!--/container-->
     </div><!--/footer-->
     {{/with}}

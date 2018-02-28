@@ -6,4 +6,14 @@
         align-items: center;
         justify-content: space-between;
     }
+
+    .social {
+        font-size: 2.2rem;
+
+        a {
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
 }
