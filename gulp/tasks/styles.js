@@ -15,6 +15,8 @@ var postcss         = require('gulp-postcss');
 var sourcemaps      = require('gulp-sourcemaps');
 var nano            = require('gulp-cssnano');
 var livereload      = require('gulp-livereload');
+var plumber         = require('gulp-plumber')
+var notify          = require('gulp-notify')
 
 gulp.task('style-lint', function () {
 
@@ -26,7 +28,10 @@ gulp.task('style-lint', function () {
         '!assets/src/css/base/sprite.css'
     ];
 
-    return gulp.src(SRC)
+    gulp.src(SRC)
+        .pipe(plumber({
+            errorHandler: notify.onError("CSS Error: <%= error.message %>")
+        }))
         .pipe(postcss([
             // See .stylelintrc for configuration options
             require('stylelint'),
@@ -49,7 +54,10 @@ gulp.task('css', ['style-lint'], function () {
         require('autoprefixer'),
     ];
 
-    return gulp.src(SRC)
+    gulp.src(SRC)
+        .pipe(plumber({
+            errorHandler: notify.onError("CSS Error: <%= error.message %>")
+        }))
         .pipe(sourcemaps.init())
         .pipe(postcss(plugins))
         .pipe(sourcemaps.write('./maps/'))
@@ -59,7 +67,10 @@ gulp.task('css', ['style-lint'], function () {
 
 gulp.task('css-optimize', function () {
 
-    return gulp.src(['assets/build/css/*.css'])
+    gulp.src(['assets/build/css/*.css'])
+        .pipe(plumber({
+            errorHandler: notify.onError("CSS Error: <%= error.message %>")
+        }))
         .pipe(nano())
         .pipe(gulp.dest('./assets/build/css/'));
 });

@@ -15,7 +15,7 @@ gulp.task('phplint', function (cb) {
         stdout: false,
         stderr: false
     }
-    phplint(['**/*.php', '!node_modules/**/*', '!lib/**/*'], opt, function (err, stdout, stderr) {
+    phplint(['*.php', '**/*.php', '!node_modules/**/*', '!lib/**/*'], opt, function (err, stdout, stderr) {
         if (err) {
             cb(err)
             process.exit(1)
