@@ -16,7 +16,7 @@ class Organisms extends \CatalystWP\Nucleus\Model
      * Prepare post data for view
      * @param  int $id WordPress Post ID
      */
-    public function initialize($id)
+    public function initialize($id = null)
     {
         if (!function_exists('get_field')) {
             return;
