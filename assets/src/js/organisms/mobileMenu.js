@@ -1,5 +1,9 @@
 import $        from 'jquery';
 
+/**
+ * Mobile navigation
+ * @type {mobileMenu}
+ */
 export default class mobileMenu {
 
 	/**
@@ -14,7 +18,11 @@ export default class mobileMenu {
 		}, options);
 
 		this.$selector = $(selector);
-		this.attachEventHandlers();
+
+		// Check visibility of menu toggle before attaching event listeners
+		if ($(this.options.toggleSelector).is(':visible')) {
+			this.attachEventHandlers();
+		}
 	}
 
 	attachEventHandlers() {

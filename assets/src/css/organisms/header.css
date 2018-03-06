@@ -35,10 +35,12 @@
 
     .menu {
         display: none;
+        margin: 1.5rem 0 0;
         width: 100%;
 
         @mixin mobile-menu {
             display: block;
+            margin: 0;
             width: auto;
         }
 
@@ -49,6 +51,7 @@
 
     .submenu {
         display: none;
+        padding: 0 0 0 1.5rem;
 
         &.menu-open {
             display: block;
@@ -56,14 +59,16 @@
     }
 
     .nav {
-        margin: 1.5rem 0 0;
-
         & > ul > li {
             border-bottom: 1px solid $gray;
             display: block;
 
             &:first-child {
                 border-top: 1px solid $gray;
+            }
+
+            &:last-child {
+                border-bottom: none;
             }
 
             @mixin mobile-menu {
@@ -78,18 +83,24 @@
 
         li a {
             display: block;
-            padding: 0.5rem 0;
+            padding: 0.75rem 0;
             position: relative;
         }
     }
 
     .has-submenu {
         &::after {
-            content: "\f105";
+            content: "\f067";
             font-family: FontAwesome;
             font-size: 18px;
             position: absolute;
             right: 0;
+        }
+
+        &.submenu-open {
+            &::after {
+                content: "\f068";
+            }
         }
 
         @mixin mobile-menu {
