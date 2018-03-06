@@ -67,6 +67,12 @@ BREAKPOINT MIXINS
     }
 }
 
+@define-mixin mobile-menu $type: min {
+    @media ($(type)-width: $mobile-menu) {
+        @mixin-content;
+    }
+}
+
 html,
 body {
     &::before {

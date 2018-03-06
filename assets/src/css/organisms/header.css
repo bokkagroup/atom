@@ -1,6 +1,10 @@
 .organism.header {
     border-bottom: 1px solid $gray;
-    padding: 3rem 0;
+    padding: 1.5rem 0;
+
+    @mixin mobile-menu {
+        padding: 3rem 0;
+    }
 
     .container {
         align-items: center;
@@ -18,8 +22,80 @@
     }
 
     .menu-toggle {
-        @mixin tablet {
+        font-size: 18px;
+
+        @mixin mobile-menu {
             display: none;
+        }
+
+        .fa {
+            margin-right: 6px;
+        }
+    }
+
+    .menu {
+        display: none;
+        width: 100%;
+
+        @mixin mobile-menu {
+            display: block;
+            width: auto;
+        }
+
+        &.menu-open {
+            display: block;
+        }
+    }
+
+    .submenu {
+        display: none;
+
+        &.menu-open {
+            display: block;
+        }
+    }
+
+    .nav {
+        margin: 1.5rem 0 0;
+
+        & > ul > li {
+            border-bottom: 1px solid $gray;
+            display: block;
+
+            &:first-child {
+                border-top: 1px solid $gray;
+            }
+
+            @mixin mobile-menu {
+                border: none;
+                display: inline-block;
+
+                &:first-child {
+                    border: none;
+                }
+            }
+        }
+
+        li a {
+            display: block;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+    }
+
+    .has-submenu {
+        &::after {
+            content: "\f105";
+            font-family: FontAwesome;
+            font-size: 18px;
+            position: absolute;
+            right: 0;
+        }
+
+        @mixin mobile-menu {
+          &::after {
+            display: none;
+          }
         }
     }
 }
