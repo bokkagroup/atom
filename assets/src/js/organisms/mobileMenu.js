@@ -35,7 +35,7 @@ export default class mobileMenu {
 		});
 
 		// Toggle submenu display
-		$(self.options.menuSelector).find('.has-submenu').on('click', function (event) {
+		$(self.options.menuSelector).find('.has-submenu > a').on('click', function (event) {
 			event.preventDefault();
 			$(this).next('.submenu').toggleClass('menu-open');
 			$(this).toggleClass('submenu-open');
