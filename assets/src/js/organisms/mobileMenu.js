@@ -19,6 +19,7 @@ export default class mobileMenu {
         }, options);
 
         this.$selector = $(selector);
+        this.init = false;
 
         this.toggleEventHandlers();
 
@@ -30,16 +31,18 @@ export default class mobileMenu {
      */
     toggleEventHandlers() {
         if (this.isMobile()) {
-            // if they haven't been attached yet, attach (desktop --> mobile)
-            // if event handlers have already been attached, don't do anything (mobile --> mobile)
-            this.attachEventHandlers();
+            if (!this.init) {
+                this.attachEventHandlers();
+                this.init = true;
+            }
         } else {
-            // if event handlers have already been attached, destroy (mobile --> desktop)
+            this.destroyEventHandlers();
+            this.init = false;
         }
     }
 
     /**
-     * Attach event listeners for menu toggles
+     * Attach event listeners
      */
     attachEventHandlers() {
         const self = this;
@@ -56,6 +59,16 @@ export default class mobileMenu {
             $(this).next('.submenu').toggleClass('menu-open');
             $(this).toggleClass('submenu-open');
         });
+    }
+
+    /**
+    * Remove event listeners
+    */
+    destroyEventHandlers() {
+        const self = this;
+
+        // Remove submenu display toggle
+        $(self.options.menuSelector).find('.has-submenu > a').off('click');
     }
 
     /**
