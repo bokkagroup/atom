@@ -65,10 +65,10 @@ export default class mobileMenu {
     * Remove event listeners
     */
     destroyEventHandlers() {
-        const self = this;
-
         // Remove submenu display toggle
-        $(self.options.menuSelector).find('.has-submenu > a').off('click');
+        $(this.options.menuSelector).find('.has-submenu > a').off('click');
+        // Remove menu-open class from any open submenus
+        $('.submenu').removeClass('menu-open');
     }
 
     /**
