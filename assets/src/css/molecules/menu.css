@@ -11,10 +11,4 @@
             margin: 0 1rem;
         }
     }
-
-    .submenu {
-        @mixin mobile-menu {
-            display: none;
-        }
-    }
 }

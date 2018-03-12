@@ -49,19 +49,11 @@
         }
     }
 
-    .submenu {
-        display: none;
-        padding: 0 0 0 1.5rem;
-
-        &.menu-open {
-            display: block;
-        }
-    }
-
     .nav {
         & > ul > li {
             border-bottom: 1px solid $gray;
             display: block;
+            position: relative;
 
             &:first-child {
                 border-top: 1px solid $gray;
@@ -88,24 +80,74 @@
         }
     }
 
-    .has-submenu > a {
-        &::after {
-            content: "\f067";
-            font-family: FontAwesome;
-            font-size: 18px;
-            position: absolute;
-            right: 0;
+    .nav .submenu {
+        display: none;
+        padding: 0 0 0 1.5rem;
+
+        &.menu-open {
+            display: block;
         }
 
-        &.submenu-open {
-            &::after {
-                content: "\f068";
+        /* Desktop dropdown */
+        @mixin mobile-menu {
+            background-color: #fff;
+            padding: 0;
+            left: 0;
+            position: absolute;
+            top: 36px;
+            white-space: nowrap;
+            width: auto;
+            z-index: 2;
+
+            li {
+                display: block;
+                margin: 0;
+            }
+
+            a {
+                padding: 0.75rem 1.5rem;
+                width: auto;
+
+                &:hover {
+                    background-color: $gray;
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    .has-submenu {
+        /* Desktop dropdown */
+        &:hover {
+            ul {
+                display: block;
             }
         }
 
-        @mixin mobile-menu {
+        .submenu:hover {
+            display: block;
+        }
+
+        /* Mobile submenu toggle */
+        & > a {
             &::after {
-                display: none;
+                content: "\f067";
+                font-family: FontAwesome;
+                font-size: 18px;
+                position: absolute;
+                right: 0;
+            }
+
+            &.submenu-open {
+                &::after {
+                    content: "\f068";
+                }
+            }
+
+            @mixin mobile-menu {
+                &::after {
+                    display: none;
+                }
             }
         }
     }
