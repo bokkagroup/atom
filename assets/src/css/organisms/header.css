@@ -117,17 +117,6 @@
     }
 
     .has-submenu {
-        /* Desktop dropdown */
-        &:hover {
-            ul {
-                display: block;
-            }
-        }
-
-        .submenu:hover {
-            display: block;
-        }
-
         /* Mobile submenu toggle */
         & > a {
             &::after {
@@ -148,6 +137,19 @@
                 &::after {
                     display: none;
                 }
+            }
+        }
+
+        /* Desktop dropdown */
+        @mixin mobile-menu {
+            &:hover {
+                ul {
+                    display: block;
+                }
+            }
+
+            .submenu:hover {
+                display: block;
             }
         }
     }
