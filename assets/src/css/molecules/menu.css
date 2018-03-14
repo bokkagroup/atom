@@ -6,11 +6,9 @@
     }
 
     li {
-        display: inline-block;
-        margin: 0 1rem;
-    }
-
-    .submenu {
-        display: none;
+        @mixin mobile-menu {
+            display: inline-block;
+            margin: 0 1rem;
+        }
     }
 }

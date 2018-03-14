@@ -4,12 +4,12 @@
         <div class="nav">
             <ul>
                 {{#each links}}
-                <li>
+                <li class="{{#if parent}}has-submenu{{/if}}">
                     {{> atoms/menu-item}}
                     {{#if parent}}
                     <ul class="submenu">
                         {{#each child_menu}}
-                        <li>
+                        <li class="{{#if parent}}has-submenu{{/if}}">
                             {{> atoms/menu-item}}
                         </li>
                         {{/each}}

@@ -1,6 +1,10 @@
 .organism.header {
     border-bottom: 1px solid $gray;
-    padding: 3rem 0;
+    padding: 1.5rem 0;
+
+    @mixin mobile-menu {
+        padding: 3rem 0;
+    }
 
     .container {
         align-items: center;
@@ -18,8 +22,135 @@
     }
 
     .menu-toggle {
-        @mixin tablet {
+        font-size: 18px;
+
+        @mixin mobile-menu {
             display: none;
+        }
+
+        .fa {
+            margin-right: 6px;
+        }
+    }
+
+    .menu {
+        display: none;
+        margin: 1.5rem 0 0;
+        width: 100%;
+
+        @mixin mobile-menu {
+            display: block;
+            margin: 0;
+            width: auto;
+        }
+
+        &.menu-open {
+            display: block;
+        }
+    }
+
+    .nav {
+        & > ul > li {
+            border-bottom: 1px solid $gray;
+            display: block;
+            position: relative;
+
+            &:first-child {
+                border-top: 1px solid $gray;
+            }
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            @mixin mobile-menu {
+                border: none;
+                display: inline-block;
+
+                &:first-child {
+                    border: none;
+                }
+            }
+        }
+
+        li a {
+            display: block;
+            padding: 0.75rem 0;
+            position: relative;
+        }
+    }
+
+    .nav .submenu {
+        display: none;
+        padding: 0 0 0 1.5rem;
+
+        &.menu-open {
+            display: block;
+        }
+
+        /* Desktop dropdown */
+        @mixin mobile-menu {
+            background-color: #fff;
+            padding: 0;
+            left: 0;
+            position: absolute;
+            top: 36px;
+            white-space: nowrap;
+            width: auto;
+            z-index: 2;
+
+            li {
+                display: block;
+                margin: 0;
+            }
+
+            a {
+                padding: 0.75rem 1.5rem;
+                width: auto;
+
+                &:hover {
+                    background-color: $gray;
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    .has-submenu {
+        /* Mobile submenu toggle */
+        & > a {
+            &::after {
+                content: "\f067";
+                font-family: FontAwesome;
+                font-size: 18px;
+                position: absolute;
+                right: 0;
+            }
+
+            &.submenu-open {
+                &::after {
+                    content: "\f068";
+                }
+            }
+
+            @mixin mobile-menu {
+                &::after {
+                    display: none;
+                }
+            }
+        }
+
+        /* Desktop dropdown */
+        @mixin mobile-menu {
+            &:hover {
+                ul {
+                    display: block;
+                }
+            }
+
+            .submenu:hover {
+                display: block;
+            }
         }
     }
 }

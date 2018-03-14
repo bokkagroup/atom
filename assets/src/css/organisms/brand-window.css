@@ -1,5 +1,5 @@
 .organism.brand-window {
-    padding: 3rem 0;
+    padding: 0 0 3rem;
     text-align: center;
 
     @mixin tablet {
