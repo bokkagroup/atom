@@ -10,7 +10,7 @@ $(document).ready(() => {
     sliders();
     modals();
     tabs();
-    maps();
+
 
     /**
      * Accordion
@@ -18,10 +18,8 @@ $(document).ready(() => {
     $('.accordion .title').on('click', function (event) {
         $(this).closest('.item').toggleClass('open');
     });
+    
 
-    /**
-     * Google Maps
-     */
     if($('.map-w-locations').length > 0) {
         loadMapsAPI(function() {
             $('.map-w-locations').each(function () {
