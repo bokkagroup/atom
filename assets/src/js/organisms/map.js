@@ -3,7 +3,6 @@ import MapMarker    from './map-marker.js';
 
 export default class Map {
     constructor(selector) {
-        
         // Map and marker options/data
         this.locations = [];
         this.markerIndex = 0;
@@ -111,7 +110,7 @@ export default class Map {
         let self = this;
         // Create infobox instance
         self.infoBoxTemplate = require('../templates/infoBox.handlebars');
-        let InfoBox = require('../vendor/infobox.js');
+        let InfoBox = require('../vendor/google-maps-infobox.js');
 
         let boxOptions = {
             content: null
