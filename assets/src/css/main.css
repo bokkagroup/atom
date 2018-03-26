@@ -52,6 +52,7 @@ ORGANISMS
 @import 'organisms/icon-grid';
 @import 'organisms/image-grid-w-overlay-content';
 @import 'organisms/lp-intro-w-form';
+@import 'organisms/map-w-locations';
 @import 'organisms/on-page-form';
 @import 'organisms/slider-gallery';
 @import 'organisms/tabbed-content';

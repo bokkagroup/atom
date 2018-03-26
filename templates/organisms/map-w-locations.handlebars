@@ -1,0 +1,19 @@
+<div class="organism map-w-locations" id="{{id}}">
+    <section>
+        <div class="container">
+            {{> molecules/text}}
+
+            <div class="map-wrap">
+                <div class="map google-map-wrapper locations-map">
+                    <div class="google-map js-locations-map" id="gmap_canvas">
+                    </div>
+                </div>
+            </div><!--/map-wrap -->
+
+            {{#each item}}
+                <div class="location-info" data-map-info='{"position": {"lat": {{latitude}},"lng": {{longitude}}},"title": "{{title}}","subtitle": "{{subtitle}}"}'></div>
+            {{/each}}
+
+        </div><!--/container -->
+    </section>
+</div><!--/map-w-locations-->
