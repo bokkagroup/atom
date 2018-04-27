@@ -31,9 +31,6 @@ class Organisms extends \CatalystWP\Nucleus\Model
             $this->data = array();
         }
 
-        //set header & footer data
-        $this->data['header'] = new organisms\Header();
-        $this->data['footer'] = new organisms\Footer();
     }
 
     /**

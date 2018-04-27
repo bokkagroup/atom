@@ -1,6 +1,6 @@
 <?php
 
-namespace CatalystWP\Atom\models\organisms;
+namespace CatalystWP\Atom\models;
 
 use CatalystWP\Nucleus\models\Menu as Menu;
 
