@@ -31,6 +31,7 @@ class Organisms extends \CatalystWP\Nucleus\Model
             $this->data = array();
         }
 
+        $this->data = apply_filters('catalystwp_organisms_filter_data', $this->data);
     }
 
     /**
