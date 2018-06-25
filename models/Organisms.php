@@ -90,7 +90,7 @@ class Organisms extends \CatalystWP\Nucleus\Model
          */
         if (!empty($organism['form'])) {
             //support for newer version of gravity form ACF field plugin
-            if (is_array($organism['form_id']) && isset($organism['form_id']['id'])) {
+            if (isset($organism['form_id']) && is_array($organism['form_id']) && isset($organism['form_id']['id'])) {
                 $organism['form_id'] = $organism['form_id']['id'];
             }
 
