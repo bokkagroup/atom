@@ -30,7 +30,7 @@
     "hogan.js": "^3.0.2",
     "imagemin-pngquant": "^4.2.2",
     "jquery": "^3.3.1",
-    "jquery-ui": "^1.10.5",
+    "jquery-ui": "^1.13.2",
     "lodash": "^3.10.1",
     "lost": "^6.7.2",
     "phplint": "^1.7.1",
